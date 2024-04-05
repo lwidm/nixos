@@ -9,6 +9,8 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
+  
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Use the systemd-boot EFI boot loader.
   # boot.loader.systemd-boot.enable = true;
@@ -54,8 +56,8 @@
     xkbOptions = "caps:escape";
     # desktopManager.default = "none";
     desktopManager.xterm.enable = false;
-    displayManager.startx.enable = true;
     windowManager.i3.enable = true;
+    displayManager.startx.enable = true;
   };
 
   # Zsh
@@ -115,6 +117,12 @@
     tmux
     tree
     stow
+    neofetch
+  ];
+
+  fonts.packages = with pkgs; [
+   hack-font 
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
