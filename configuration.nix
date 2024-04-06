@@ -47,6 +47,12 @@
   #   useXkbConfig = true; # use xkb.options in tty.
   };
 
+  # Set environment vars
+  environment.variables = rec {
+    EDITOR = "/run/current-system/sw/bin/nvim";
+    NIXCONF = "/etc/nixos/";
+  };
+
   # X11
   services.xserver = {
     enable = true;
@@ -58,6 +64,9 @@
     desktopManager.xterm.enable = false;
     windowManager.i3.enable = true;
     displayManager.startx.enable = true;
+    displayManager.sessionCommands = ''
+    feh --bg-fill /usr/share/backgrounds/nixos-wallpaper-catppuccin-latte.png
+    '';
   };
 
   # Zsh
@@ -96,7 +105,8 @@
     git
     github-cli
     # X11 packages
-    rxvt_unicode
+    alacritty 
+    feh
     xorg.xorgserver
     xorg.xinit
     xorg.xf86videovmware
@@ -107,7 +117,10 @@
     xorg.xf86inputevdev
     xorg.xf86inputsynaptics
     xorg.xf86inputlibinput
+    i3blocks
+    i3lock-color
     # development
+    (python3.withPackages (python-pkgs: [] ))
     clang
     zip
     unzip
@@ -124,6 +137,7 @@
    hack-font 
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
