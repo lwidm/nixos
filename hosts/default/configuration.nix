@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, stdenv, lib, pkgs, ... }:
+{ config, stdenv, lib, pkgs, inputs, ... }:
 
 {
   imports =
@@ -57,8 +57,8 @@
   services.xserver = {
     enable = true;
     autorun = false;
-    layout = "ch";
-    xkbVariant = "de_nodeadkeys";
+    xkb.layout = "ch";
+    xkb.variant = "de_nodeadkeys";
     # desktopManager.default = "none";
     desktopManager.xterm.enable = false;
     windowManager.i3.enable = true;
@@ -74,7 +74,7 @@
 
   # Virtualbox
   virtualisation.virtualbox.guest.enable = true;
-  virtualisation.virtualbox.guest.x11 = true;
+  # virtualisation.virtualbox.guest.x11 = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
