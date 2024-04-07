@@ -59,7 +59,6 @@
     autorun = false;
     layout = "ch";
     xkbVariant = "de_nodeadkeys";
-    xkbOptions = "caps:escape";
     # desktopManager.default = "none";
     desktopManager.xterm.enable = false;
     windowManager.i3.enable = true;
