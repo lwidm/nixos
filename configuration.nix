@@ -116,6 +116,7 @@
     xorg.xf86inputevdev
     xorg.xf86inputsynaptics
     xorg.xf86inputlibinput
+    xorg.xmodmap
     # packages for i3
     i3blocks
     i3lock-color
@@ -125,6 +126,7 @@
     (python3.withPackages (python-pkgs: [] ))
     clang
     gnumake
+    cargo
     zip
     unzip
     # other
