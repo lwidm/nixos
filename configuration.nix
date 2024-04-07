@@ -117,11 +117,15 @@
     xorg.xf86inputevdev
     xorg.xf86inputsynaptics
     xorg.xf86inputlibinput
+    # packages for i3
     i3blocks
     i3lock-color
+    envsubst
+    acpi
     # development
     (python3.withPackages (python-pkgs: [] ))
     clang
+    gnumake
     zip
     unzip
     # other
@@ -130,6 +134,7 @@
     tmux
     tree
     stow
+    pulseaudio
     neofetch
   ];
 
