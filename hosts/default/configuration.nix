@@ -117,6 +117,7 @@
     xorg.xf86inputsynaptics
     xorg.xf86inputlibinput
     xorg.xmodmap
+    picom
     # packages for i3
     i3blocks
     i3lock-color
