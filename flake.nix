@@ -1,3 +1,5 @@
+# flake.nix
+
 {
   description = "Nixos config flake";
 
@@ -10,11 +12,12 @@
     # };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { nixpkgs, ... }@inputs: {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/default/configuration.nix
+        ./nixosModules
         # inputs.home-manager.nixosModules.default
       ];
     };
