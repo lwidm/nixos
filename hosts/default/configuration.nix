@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
     ];
   
+  development.enable = true;	
 
   networking.hostName = "lwidmNixOs"; # Define your hostname.
   # Pick only one of the below networking options.
