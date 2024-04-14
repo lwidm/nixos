@@ -15,4 +15,22 @@
 		feh --bg-fill /usr/share/backgrounds/nixos-wallpaper-catppuccin-latte.png
 		'';
 	};
+
+	# X11 packages
+	environment.systemPackages = with pkg; [	
+		alacritty 
+		feh
+		xorg.xorgserver
+		xorg.xinit
+		xorg.xf86videovmware
+		xorg.xrdb
+		xorg.libXft
+		xorg.xrandr
+		xclip
+		xorg.xf86inputevdev
+		xorg.xf86inputsynaptics
+		xorg.xf86inputlibinput
+		xorg.xmodmap
+		picom
+	];
 }

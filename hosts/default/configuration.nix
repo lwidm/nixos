@@ -10,51 +10,10 @@
       ./hardware-configuration.nix
     ];
   
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   networking.hostName = "lwidmNixOs"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
-  # Set your time zone.
-  time.timeZone = "Europe/Zurich";
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_AU.UTF-8";
-  console = {
-  #   font = "Lat2-Terminus16";
-    keyMap = "sg";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  };
-
-  # Set environment vars
-  environment.variables = rec {
-    EDITOR = "/run/current-system/sw/bin/nvim";
-    NIXCONF = "/etc/nixos/";
-  };
-
-  # Zsh
-  programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
-
-  # Virtualbox
-  virtualisation.virtualbox.guest.enable = true;
-  # virtualisation.virtualbox.guest.x11 = true;
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lukas = {
@@ -63,32 +22,18 @@
     useDefaultShell = true;
     extraGroups = [ "wheel" "networkmanager"]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [];
-   };
+   }; networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+
+  # Virtualbox
+  virtualisation.virtualbox.guest.enable = true;
+  # virtualisation.virtualbox.guest.x11 = true;
+
+  # Enable touchpad support (enabled default in most desktopManager).
+  # services.xserver.libinput.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    # essential packages
-    vim 
-    wget
-    git
-    github-cli
-    # X11 packages
-    alacritty 
-    feh
-    xorg.xorgserver
-    xorg.xinit
-    xorg.xf86videovmware
-    xorg.xrdb
-    xorg.libXft
-    xorg.xrandr
-    xclip
-    xorg.xf86inputevdev
-    xorg.xf86inputsynaptics
-    xorg.xf86inputlibinput
-    xorg.xmodmap
-    picom
-    # packages for i3
+  environment.systemPackages = with pkgs; [    # packages for i3
     i3blocks
     i3lock-color
     envsubst
@@ -106,7 +51,6 @@
     tmux
     tree
     stow
-    pulseaudio
     neofetch
   ];
 
