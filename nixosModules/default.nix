@@ -8,7 +8,7 @@
 		./development.nix
 	];
 	
-	base-config.enable = lib.mkDefaullt true;
+	base-config.enable = lib.mkDefault true;
 	boot.enable = lib.mkDefault true;
 
 }
