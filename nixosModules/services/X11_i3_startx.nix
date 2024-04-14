@@ -42,7 +42,6 @@
 			i3lock-color
 			envsubst
 			acpi
-			pipewire-pulse # for i3blocks pipewire
 			alacritty 
 			feh
 		];

@@ -45,6 +45,7 @@
     sound.enable = true;
     services.pipewire.enable = true;
     hardware.pulseaudio.enable = false;
+    services.pipewire.pulse.enable = true;
 
     # essential packages
     environment.systemPackages = with pkgs; [
