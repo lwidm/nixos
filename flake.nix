@@ -13,13 +13,25 @@
   };
 
   outputs = { nixpkgs, ... }@inputs: {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./hosts/default/configuration.nix
-        ./nixosModules
-        # inputs.home-manager.nixosModules.default
-      ];
+    nixosConfigurations = {
+
+      default = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/default/configuration.nix
+          ./nixosModules
+          # inputs.home-manager.nixosModules.default
+        ];
+      };
+
+      isoimage = nixpkgs.lib.nixoSystem {
+        specialArgs = { inherit inputs; };
+        moodules = [
+          ./host/isoimage/configuration.nix
+          ./nixosModules
+        ];
+      };
+
     };
   };
 }
