@@ -27,7 +27,7 @@
       isoimage = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
-          ./host/isoimage/configuration.nix
+          ./hosts/isoimage/configuration.nix
           ./nixosModules
         ];
       };
