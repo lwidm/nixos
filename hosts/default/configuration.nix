@@ -9,8 +9,11 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
-  
-  development.enable = true;	
+
+  fonts.enable = true;
+  X11_i3_startx.enable = true;
+  development.enable = true;
+
 
   networking.hostName = "lwidmNixOs"; # Define your hostname.
   # Pick only one of the below networking options.
