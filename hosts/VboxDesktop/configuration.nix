@@ -51,6 +51,7 @@
     firefox
     stow
     neofetch
+    polybar
   ];
 
 
