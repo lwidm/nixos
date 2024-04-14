@@ -3,7 +3,7 @@
 { pkgs, lib, config, ... }: {
 
 	options = {
-		boot.enable = lib.mkEnalbeOption "enables boot.nix"
+		boot.enable = lib.mkEnalbeOption "enables boot.nix";
 	};
 
 
