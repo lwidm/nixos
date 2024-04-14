@@ -33,23 +33,8 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [    # packages for i3
-    i3blocks
-    i3lock-color
-    envsubst
-    acpi
-    # development
-    (python3.withPackages (python-pkgs: [] ))
-    clang
-    gnumake
-    cargo
-    zip
-    unzip
-    # other
-    neovim
+  environment.systemPackages = with pkgs; [    
     firefox
-    tmux
-    tree
     stow
     neofetch
   ];

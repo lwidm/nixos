@@ -16,10 +16,8 @@
 		'';
 	};
 
-	# X11 packages
 	environment.systemPackages = with pkgs; [	
-		alacritty 
-		feh
+		# X11 packages	
 		xorg.xorgserver
 		xorg.xinit
 		xorg.xf86videovmware
@@ -32,5 +30,13 @@
 		xorg.xf86inputlibinput
 		xorg.xmodmap
 		picom
+
+		# i3 packages
+		i3blocks
+		i3lock-color
+		envsubst
+		acpi
+		alacritty 
+		feh
 	];
 }

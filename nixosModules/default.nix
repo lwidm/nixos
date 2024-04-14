@@ -5,6 +5,7 @@
 		./boot.nix
 		./base-config.nix
 		./fonts.nix
+		./development.nix
 	];
 
 }

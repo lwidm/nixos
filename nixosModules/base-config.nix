@@ -45,6 +45,7 @@
     wget
     git
     github-cli
+    tree
   ];
 
 }
