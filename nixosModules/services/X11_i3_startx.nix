@@ -17,7 +17,7 @@
 	};
 
 	# X11 packages
-	environment.systemPackages = with pkg; [	
+	environment.systemPackages = with pkgs; [	
 		alacritty 
 		feh
 		xorg.xorgserver
