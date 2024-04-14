@@ -54,12 +54,6 @@
     neofetch
   ];
 
-  fonts.packages = with pkgs; [
-   hack-font 
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-  ];
-
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
