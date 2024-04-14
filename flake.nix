@@ -24,7 +24,7 @@
         ];
       };
 
-      isoimage = nixpkgs.lib.nixoSystem {
+      isoimage = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         moodules = [
           ./host/isoimage/configuration.nix
