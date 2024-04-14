@@ -7,12 +7,6 @@
 
 	nixpkgs.hostPlatform = "x86_64-linux";
 
-	networking = { 
-		hostName = "nixosIsoImage";
-		networkmanager.enable = true;
-		# wireless.enable = true;
-	};
-
 	environment.systemPackages = with pkgs; [
 		gptfdisk
 	];
