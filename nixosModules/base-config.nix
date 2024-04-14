@@ -14,7 +14,6 @@
   # Select internationalisation properties.
   i18n = {
     defaultLocale = "en_AU.UTF-8";
-    supportedLocales = [ "de_CH.UTF-8" ];
   };
   console = {
     # font = "Lat2-Terminus16";
