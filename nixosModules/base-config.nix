@@ -38,7 +38,7 @@
   # Enable sound
   sound.enable = true;
   services.pipewire.enable = true;
-  services.pulseaudio.enable = false;
+  hardware.pulseaudio.enable = false;
 
   # essential packages
   environment.systemPackages = with pkgs; [
