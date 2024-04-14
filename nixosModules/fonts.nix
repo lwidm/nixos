@@ -1,9 +1,9 @@
 # fonts.nix
 
-{ pkgs, ... }: {
+{ pkgs, lib, config, ... }: {
 
   options = {
-    fonts.enable = lib.mkEnableOption "enables fonst.nix"
+    fonts.enable = lib.mkEnableOption "enables fonts.nix";
   };
 
 
@@ -14,6 +14,6 @@
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
 
-    };
+  };
 
 }
