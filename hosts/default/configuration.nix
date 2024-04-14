@@ -8,14 +8,30 @@
       ./hardware-configuration.nix
     ];
 
+
   fonts.enable = true;
   X11_i3_startx.enable = true;
   development.enable = true;
 
 
-  networking.hostName = "lwidmNixOs"; # Define your hostname.
+  # Networking
+  networking =  {
+    hostName = "lwidmVboxNixos"; # Define your hostname.
+    networkmanager.enable = true;
+    wireless.enable = true; # Enables wireless support via wpa_supplicant.
+  };
   # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking.wireless.enable = true; 
+
+  # Configure network proxy if necessary
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+
+  # Virtualbox
+  virtualisation.virtualbox.guest.enable = true;
+  # virtualisation.virtualbox.guest.x11 = true;
+
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lukas = {
@@ -24,11 +40,7 @@
     useDefaultShell = true;
     extraGroups = [ "wheel" "networkmanager"]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [];
-   }; networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
-  # Virtualbox
-  virtualisation.virtualbox.guest.enable = true;
-  # virtualisation.virtualbox.guest.x11 = true;
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -40,6 +52,7 @@
     stow
     neofetch
   ];
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
