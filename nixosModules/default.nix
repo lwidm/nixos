@@ -4,8 +4,9 @@
 		./base-config.nix
 		./boot.nix
 		./fonts.nix
-		./services/X11_i3_startx.nix
 		./development.nix
+		./services/X11_i3_startx.nix
+		./services/hyprland.nix
 	];
 	
 	base-config.enable = lib.mkDefault true;
