@@ -10,7 +10,8 @@
 
 
   fonts.enable = true;
-  X11_i3_startx.enable = true;
+  # X11_i3_startx.enable = true;
+  hyprland.enable = true;
   development.enable = true;
 
 
