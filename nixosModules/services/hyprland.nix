@@ -12,7 +12,10 @@
 			enable = true;
 			xwayland.enable = true;
 		};
-
+		environment.sessionVariables = {
+			# Hint electron apps to use wayland
+			NIXOS_OZONE_WL = "1";
+		};
 
 		environment.systemPackages = [
 			pkgs.waybar
@@ -32,12 +35,10 @@
 		};
 		
 		# options to be enable in case of nvidia
-		programs.hyprland.nvidiaPatches = lib.mkIf (config.nvidia.enable) true;
+		programs.hyprland = lib.mkIf (config.nvidia.enable) { nvidiaPatches = true };
  		environment.sessionVariables = lib.mkIf (config.nvidia.enable) {
 			# If your curser becomes invisible
 			WLR_NO_HARDWARE_CURSORS = "1";
-			# Hint electron apps to use wayland
-			NIXOS_OZONE_WL = "1";
 		};
 		hardware = lib.mkIf (config.nvidia.enable) {
 			opengl.enable = true;
