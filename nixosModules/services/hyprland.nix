@@ -35,7 +35,7 @@
 		};
 		
 		# options to be enable in case of nvidia
-		programs.hyprland = lib.mkIf (config.nvidia.enable) { nvidiaPatches = true };
+		programs.hyprland = lib.mkIf (config.nvidia.enable) { nvidiaPatches = true; };
  		environment.sessionVariables = lib.mkIf (config.nvidia.enable) {
 			# If your curser becomes invisible
 			WLR_NO_HARDWARE_CURSORS = "1";
