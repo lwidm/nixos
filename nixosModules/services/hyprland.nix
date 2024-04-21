@@ -40,8 +40,6 @@
 			extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 		};
 		
-		# options to be enable in case of nvidia
-		programs.hyprland.nvidiaPatches = lib.mkIf (config.nvidia.enable) true;
  		# environment.sessionVariables = lib.mkIf (config.nvidia.enable) {
 		#	# If your curser becomes invisible
 		#	WLR_NO_HARDWARE_CURSORS = "1";
