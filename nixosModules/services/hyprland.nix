@@ -26,8 +26,10 @@
 			libnotify
 			swww
 			alacritty
+			kitty
 			wofi
 			dconf
+			gtk4
 		];
 
 		security.polkit.enable = true;
