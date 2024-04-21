@@ -23,7 +23,7 @@
 			}) )
 			mako
 			libnotify
-			swww
+			hyprpaper
 			wl-clipboard
 			wlroots
 			alacritty
