@@ -23,12 +23,11 @@
 			}) )
 			mako
 			libnotify
-			swww
+			hyperpaper
+			wl-clipboard
 			alacritty
-			kitty
 			foot
 			wofi
-			dconf
 			gtk3
 			gtk4
 		];
