@@ -17,16 +17,16 @@
 			NIXOS_OZONE_WL = "1";
 		};
 
-		environment.systemPackages = [
-			pkgs.waybar
-			pkgs.mako
-			pkgs.libnotify
-			pkgs.swww
-			pkgs.alacritty
-			pkgs.wofi
-			(pkgs.waybar.overrideAttrs (oldAttrs: {
+		environment.systemPackages = with pkgs; [
+			waybar
+			(waybar.overrideAttrs (oldAttrs: {
 				mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
 			}) )
+			mako
+			libnotify
+			swww
+			alacritty
+			wofi
 		];
 
 		xdg.portal = {
