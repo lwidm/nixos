@@ -50,6 +50,7 @@
 
     # essential packages
     environment.systemPackages = with pkgs; [
+      pciutils
       vim 
       wget
       git
