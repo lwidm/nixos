@@ -13,6 +13,7 @@
   X11_i3_startx.enable = false;
   hyprland.enable = true;
   development.enable = true;
+  nvidia.enable = true;
 
 
   # Networking
