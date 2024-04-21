@@ -10,7 +10,6 @@
 		programs.hyprland = {
 			enable = true;
 			xwayland.enable = true;
-			xwayland.hidpi = true;
 		};
 		environment.sessionVariables = {
 			# Hint electron apps to use wayland
