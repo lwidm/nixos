@@ -47,10 +47,6 @@
 		#	# If your curser becomes invisible
 		#	WLR_NO_HARDWARE_CURSORS = "1";
 		#};
-		hardware = lib.mkIf (config.nvidia.enable) {
-			opengl.enable = true;
-			nvidia.modesetting.enable = true;
-		};
 	};
 
 }
