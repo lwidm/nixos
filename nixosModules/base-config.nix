@@ -11,7 +11,7 @@
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-    nixpkgs.allowUnfree = true;
+    nixpkgs.config.allowUnfree = true;
 
     # Set your time zone.
     time.timeZone = "Europe/Zurich";
