@@ -27,6 +27,7 @@
 			swww
 			alacritty
 			wofi
+			gtk4
 		];
 
 		xdg.portal = {
