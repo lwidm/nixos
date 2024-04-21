@@ -4,7 +4,6 @@
 
 	options = {
 		hyprland.enable = lib.mkEnableOption "enables hyprland";
-		nvidia.enable = lib.mkEnableOption "enables nvidia module";
 	};
 
 	config = lib.mkIf config.hyprland.enable {
