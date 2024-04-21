@@ -33,6 +33,8 @@
 			gtk4
 		];
 
+		services.xserver.libinput.enable = true;
+
 		security.polkit.enable = true;
 
 		xdg.portal = {
