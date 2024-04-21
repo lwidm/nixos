@@ -27,8 +27,10 @@
 			swww
 			alacritty
 			wofi
-			gtk4
+			dconf
 		];
+
+		security.polkit.enable = true;
 
 		xdg.portal = {
 			enable = true;
