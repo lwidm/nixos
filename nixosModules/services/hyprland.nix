@@ -27,6 +27,7 @@
 			swww
 			alacritty
 			kitty
+			foot
 			wofi
 			dconf
 			gtk3
