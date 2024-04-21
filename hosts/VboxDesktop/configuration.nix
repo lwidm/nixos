@@ -40,7 +40,7 @@
     isNormalUser = true;
     description = "lukas widmer";
     useDefaultShell = true;
-    extraGroups = [ "wheel" "networkmanager"]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "input" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [];
   };
 
