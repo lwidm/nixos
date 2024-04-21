@@ -10,6 +10,7 @@
 		programs.hyprland = {
 			enable = true;
 			xwayland.enable = true;
+			xwayland.hidpi = true;
 		};
 		environment.sessionVariables = {
 			# Hint electron apps to use wayland
@@ -23,8 +24,9 @@
 			}) )
 			mako
 			libnotify
-			hyperpaper
+			swww
 			wl-clipboard
+			wlroots
 			alacritty
 			foot
 			wofi
@@ -36,6 +38,7 @@
 
 		xdg.portal = {
 			enable = true;
+			wlr.enable = true;
 			extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 		};
 		
