@@ -29,6 +29,7 @@
 			kitty
 			wofi
 			dconf
+			gtk3
 			gtk4
 		];
 
