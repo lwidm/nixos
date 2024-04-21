@@ -19,11 +19,11 @@
 			
 			modesetting.enable = true;
 			powerManagement.enable = false;
-			powerManagement.finegrained = true;
+			powerManagement.finegrained = false;
 
 			open = false;
 
-			nvidiaSettings = false;
+			nvidiaSettings = true;
 
 		};
 
