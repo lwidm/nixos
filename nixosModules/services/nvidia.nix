@@ -23,7 +23,7 @@
 
 			open = false;
 
-			nvidiaSettings = true;
+			nvidiaSettings = false;
 
 		};
 
