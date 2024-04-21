@@ -17,9 +17,6 @@
 			desktopManager.xterm.enable = false;
 			windowManager.i3.enable = true;
 			displayManager.startx.enable = true;
-			displayManager.sessionCommands = ''
-			feh --bg-fill /usr/share/backgrounds/nixos-wallpaper-catppuccin-latte.png
-			'';
 		};
 
 		environment.systemPackages = with pkgs; [	
