@@ -49,6 +49,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [    
     nix-prefetch
+    nix-prefetch-git
     firefox
     stow
     neofetch
