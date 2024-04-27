@@ -6,6 +6,8 @@
 		gtk-conf.enable = lib.mkEnableOption "enables gtk-conf";
 	};
 
+	programs.dconf.enable = true;
+
 	config = lib.mkIf config.gtk-conf.enable {
 
 		environment.systemPackages = with pkgs; [
