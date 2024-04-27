@@ -10,9 +10,10 @@
 
 		qt-conf.enable = true;
 
-		services.xserver.displayManager.sddm = {
+		services.xserver = {
 			enable = true;
-			theme = "${import ./sddm-theme_sugar-dark.nix { inherit pkgs; }}";
+			displayManager.sddm.enable = true;
+			displayManager.sddm.theme = "${import ./sddm-theme_sugar-dark.nix { inherit pkgs; }}";
 		};
 	};
 
