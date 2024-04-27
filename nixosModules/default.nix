@@ -10,6 +10,7 @@
 		./services/X11_i3_startx.nix
 		./services/hyprland.nix
 		./services/nvidia.nix
+		./sddm/sddm.nix
 	];
 	
 	base-config.enable = lib.mkDefault true;
