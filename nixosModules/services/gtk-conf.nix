@@ -8,8 +8,6 @@
 
 	config = lib.mkIf config.gtk-conf.enable {
 
-		programs.dconf.enable = true;
-
 		environment.systemPackages = with pkgs; [
 			(catppuccin-gtk.override {
 				accents = [ "blue" ];
