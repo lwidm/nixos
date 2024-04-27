@@ -6,9 +6,9 @@
 		gtk-conf.enable = lib.mkEnableOption "enables gtk-conf";
 	};
 
-	programs.dconf.enable = true;
-
 	config = lib.mkIf config.gtk-conf.enable {
+
+		programs.dconf.enable = true;
 
 		environment.systemPackages = with pkgs; [
 			(catppuccin-gtk.override {
