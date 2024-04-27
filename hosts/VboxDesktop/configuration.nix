@@ -50,6 +50,7 @@
   environment.systemPackages = with pkgs; [    
     nix-prefetch
     nix-prefetch-git
+    nix-prefetch-github
     firefox
     stow
     neofetch
