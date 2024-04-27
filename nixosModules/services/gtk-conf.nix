@@ -1,4 +1,4 @@
-# gtk.nix
+# gtk-conf.nix
 
 { pkgs, lib, config, ... }: {
 
@@ -13,7 +13,7 @@
 				accents = [ "blue" ];
 				size = "compact";
 				# tweaks = [ "rimless "black" ]
-				variant = "mocha;
+				variant = "mocha";
 			})
 		];
 
