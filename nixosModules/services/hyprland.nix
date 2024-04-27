@@ -7,6 +7,9 @@
 	};
 
 	config = lib.mkIf config.hyprland.enable {
+		
+		gtk-conf.enable = true;
+
 		programs.hyprland = {
 			enable = true;
 			xwayland.enable = true;
@@ -29,8 +32,6 @@
 			alacritty
 			foot
 			wofi
-			gtk3
-			gtk4
 		];
 
 		services.xserver.libinput.enable = true;
