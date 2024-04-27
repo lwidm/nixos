@@ -3,10 +3,10 @@
 { pkgs, lib, config, ... }: {
 
 	options = {
-		gtk.enable = lib.mkEnableOption "enables hyprland";
+		gtk-conf.enable = lib.mkEnableOption "enables gtk-conf";
 	};
 
-	config = lib.mkIf config.gtk.enable {
+	config = lib.mkIf config.gtk-conf.enable {
 
 		environment.systemPackages = with pkgs; [
 			(catppuccin-gtk-override {
