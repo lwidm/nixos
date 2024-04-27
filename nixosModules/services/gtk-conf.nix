@@ -9,7 +9,7 @@
 	config = lib.mkIf config.gtk-conf.enable {
 
 		environment.systemPackages = with pkgs; [
-			(catppuccin-gtk-override {
+			(catppuccin-gtk.override {
 				accents = [ "blue" ];
 				size = "compact";
 				# tweaks = [ "rimless "black" ]
