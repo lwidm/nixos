@@ -52,6 +52,7 @@
     stow
     neofetch
     polybar
+    gimp
   ];
 
 
