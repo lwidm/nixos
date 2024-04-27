@@ -9,6 +9,7 @@
 	config = lib.mkIf config.hyprland.enable {
 		
 		gtk-conf.enable = true;
+		qt-conf.enable = true;
 
 		programs.hyprland = {
 			enable = true;
