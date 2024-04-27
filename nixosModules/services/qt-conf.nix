@@ -9,8 +9,8 @@
 	config = lib.mkIf config.qt-conf.enable {
 		
 		qt.enable = true;
-		# platform theme "gtk" or "gnome"
-		qt.platformTheme = "gtk";
+		qt.platformTheme = "qt5ct";
+
 
 	};
 
