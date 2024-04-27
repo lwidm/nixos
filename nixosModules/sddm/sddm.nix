@@ -10,6 +10,11 @@
 
 		qt-conf.enable = true;
 
+		environment.systemPackages = with pkgs; [
+			libsForQt5.qt5.qtquickcontrols2
+			libsForQt5.qt5.qtgraphicaleffects
+		];
+
 		services.xserver = {
 			enable = true;
 			xkb.layout = "ch";
