@@ -12,7 +12,7 @@
 			enable = true;
 			autorun = false;
 			xkb.layout = "ch";
-			xkb.variant = "de_nodeadkeys";
+			xkb.variant = "de";
 			# desktopManager.default = "none";
 			desktopManager.xterm.enable = false;
 			windowManager.i3.enable = true;
