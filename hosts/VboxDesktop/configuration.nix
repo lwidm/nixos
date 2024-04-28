@@ -46,7 +46,11 @@
     useDefaultShell = true;
     # WARNING: not sure whether it is smart to add the user to the input group
     extraGroups = [ "wheel" "networkmanager" "input" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [];
+    packages = with pkgs; [
+      polybar
+      firefox
+      gimp
+    ];
   };
 
   # List packages installed in system profile. To search, run:
@@ -55,10 +59,8 @@
     nix-prefetch
     nix-prefetch-git
     nix-prefetch-github
-    firefox
     neofetch
-    polybar
-    gimp
+    dd
   ];
 
 
