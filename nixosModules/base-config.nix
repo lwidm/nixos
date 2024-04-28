@@ -52,11 +52,12 @@
 
     # essential packages
     environment.systemPackages = with pkgs; [
-      pciutils
+      neovim
       vim 
       wget
       git
       github-cli
+      stow
       tree
     ];
 

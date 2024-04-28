@@ -56,7 +56,6 @@
     nix-prefetch-git
     nix-prefetch-github
     firefox
-    stow
     neofetch
     polybar
     gimp
