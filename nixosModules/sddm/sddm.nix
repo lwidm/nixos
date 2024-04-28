@@ -7,7 +7,6 @@
 		sddm.xrandr = lib.mkOption {
 			type = lib.types.str;
 			default = ''
-				xrandr --output Virtual-1 --mode 2560x1440 --rate 59.91
 			'';
 			example = ''
 				xrandr --output Virtual-1 --mode 2560x1440 --rate 59.91
