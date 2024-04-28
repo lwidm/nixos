@@ -3,7 +3,7 @@
 { pkgs }:
 
 let
-	imgLink = "https://raw.githubusercontent.com/NixOs/nixos-artwork/master/wallpapers/nix-wallpaper-nineish-solarized-light.png";
+	imgLink = "https://www.myswitzerland.com/-/media/dam/resources/places/frauenfeld/images winter/50773_32001800.jpeg";
 
 	image = pkgs.fetchurl {
 		url = imgLink;
@@ -23,6 +23,6 @@ pkgs.stdenv.mkDerivation {
 		cp -R ./* $out/
 		cd $out/
 		rm Background.jpg
-		cp -r ${image} $out/Background.png
+		cp -r ${image} $out/Background.jpg
 	'';
 }
