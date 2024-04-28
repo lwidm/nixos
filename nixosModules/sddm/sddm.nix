@@ -12,7 +12,7 @@
 			example = ''
 				xrandr --output Virtual-1 --mode 2560x1440 --rate 59.91
 			'';
-			discription = lib.mdDoc "xrandr command to run before sddm starts (e.g.: xrandr --output Virtual-1 --mode 2560x1440 --rate 59.91 )";
+			description = lib.mdDoc "xrandr command to run before sddm starts (e.g.: xrandr --output Virtual-1 --mode 2560x1440 --rate 59.91 )";
 		};
 	};
 
