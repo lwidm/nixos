@@ -6,6 +6,8 @@
 
 	base-config.enable = true;
 
+	nixpkgs.hostPlatform = "x86_64-linux";
+
 	environment.systemPakages = with pkgs; [
 		gptfdisk
 		parted
