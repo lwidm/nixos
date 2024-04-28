@@ -3,7 +3,7 @@
 { pkgs }:
 
 let
-	imgLink = "https://www.myswitzerland.com/-/media/dam/resources/places/frauenfeld/images winter/50773_32001800.jpeg";
+	imgLink = "https://images.pexels.com/photos/733148/pexels-photo-733148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
 
 	image = pkgs.fetchurl {
 		url = imgLink;
