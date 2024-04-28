@@ -5,6 +5,7 @@
 	];
 
 	base-config.enable = true;
+	boot.enable = false;
 
 	nixpkgs.hostPlatform = "x86_64-linux";
 
