@@ -8,7 +8,7 @@
 
 	nixpkgs.hostPlatform = "x86_64-linux";
 
-	environment.systemPakages = with pkgs; [
+	environment.systemPackages = with pkgs; [
 		gptfdisk
 		parted
 		disko
