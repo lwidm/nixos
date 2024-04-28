@@ -19,6 +19,10 @@
 			enable = true;
 			xkb.layout = "ch";
 			xkb.variant = "de";
+			resolutions = [
+				{ x = 2560; y = 1440; }
+				{ x = 1920; y = 1080; }
+			];
 			displayManager.sddm.enable = true;
 			displayManager.sddm.wayland.enable = true;
 			displayManager.sddm.theme = "${import ./sddm-theme_sugar-dark.nix { inherit pkgs; }}";
