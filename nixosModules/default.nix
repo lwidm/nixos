@@ -12,6 +12,7 @@
 		./services/hyprland.nix
 		./services/nvidia.nix
 		./sddm/sddm.nix
+		./services/bluetooth.nix
 	];
 	
 	base-config.enable = lib.mkDefault true;
