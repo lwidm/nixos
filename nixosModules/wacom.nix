@@ -8,7 +8,7 @@
 
 	config = lib.mkIf config.wacom.enable {
 		
-		xserver.wacom.enable = true;
+		services.xserver.wacom.enable = true;
 
 		# hardware.opentabletdriver.enable = true;
 
