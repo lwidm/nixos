@@ -3,7 +3,7 @@
 { pkgs, lib, config, ... }: {
 
 	options = {
-		blueooth.enable = lib.mkEnableOption "enable bluetooth.nix"
+		blueooth.enable = lib.mkEnableOption "enable bluetooth.nix";
 	};
 
 	config = lib.mkIf config.bluetooth.enable {
