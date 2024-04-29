@@ -27,8 +27,8 @@
 
 		};
 
-		environment.variables = {
-			WLR_NO_HARDWARE_CURSORS=1;
+		environment.variables = rec {
+			WLR_NO_HARDWARE_CURSORS = "1";
 		};
 
 	};
