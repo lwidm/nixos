@@ -28,7 +28,7 @@
 			enable = true;
 			xkb.layout = "ch";
 			xkb.variant = "de";
-			displayManager.sddm.setupScript = config.sddm.xrandr;
+			displayManager.sddm.setupCommands = " xrandr --output DP-3 --mode 2560x1440 --primary --outpu HDMI-A-1 --mode 1920x1080 --off";
 			displayManager.sddm.enable = true;
 			displayManager.sddm.wayland.enable = true;
 			displayManager.sddm.theme = "${import ./sddm-theme_sugar-dark.nix { inherit pkgs; }}";
