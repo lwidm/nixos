@@ -13,8 +13,8 @@
 			remotePlay.openFirewall = true;
 		};
 
-		programs.java.enable = true;
-		programs.steam-package = pkgs.steam.override { withJava = true; };
+		# programs.java.enable = true;
+		# programs.steam-package = pkgs.steam.override { withJava = true; };
 
 		nixpkgs.config.allowUnfreePrediacte = pkg: builtins.elem (lib.getName pkg) [
 			"steam"
