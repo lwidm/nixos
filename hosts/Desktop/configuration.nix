@@ -16,7 +16,7 @@
   nvidia.enable = true;
   sddm.enable = true;
   sddm.xrandr = ''
-    xrandr --output DP-3 --mode 2560x1440 --rate 59.91
+    xrandr --output DP-3 --mode 2560x1440 --rate 59.91 --primary
   '';
   bluetooth.enable = true;
 
