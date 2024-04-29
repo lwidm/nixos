@@ -1,13 +1,13 @@
-# boot.nix
+# grub.nix
 
 { pkgs, lib, config, ... }: {
 
 	options = {
-		boot.enable = lib.mkEnableOption "enables boot.nix";
+		grub.enable = lib.mkEnableOption "enables grub.nix";
 	};
 
 
-	config = lib.mkIf config.boot.enable {
+	config = lib.mkIf config.grub.enable {
 
 		# Use the systemd-boot EFI boot loader.
 		# boot.loader.systemd-boot.enable = true;
@@ -15,7 +15,7 @@
 		boot.loader = {
 			efi = {
 				canTouchEfiVariables = true;
-				efiSysMountPoint = "/boot/efi";
+				efiSysMountPoint = "/boot";
 			};
 			grub = {
 				efiSupport = true;

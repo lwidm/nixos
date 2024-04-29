@@ -14,6 +14,6 @@
 	];
 	
 	base-config.enable = lib.mkDefault true;
-	boot.enable = lib.mkDefault true;
+	systemd-boot.enable = lib.mkDefault true;
 
 }
