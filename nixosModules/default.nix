@@ -2,7 +2,8 @@
 	
 	imports = [
 		./base-config.nix
-		./boot.nix
+		./grub.nix
+		./systemd-boot.nix
 		./fonts.nix
 		./development.nix
 		./services/gtk-conf.nix
@@ -14,6 +15,7 @@
 	];
 	
 	base-config.enable = lib.mkDefault true;
+	grub.enable = lib.mkDefault false;
 	systemd-boot.enable = lib.mkDefault true;
 
 }
