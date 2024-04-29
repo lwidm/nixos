@@ -17,6 +17,9 @@
   sddm.enable = true;
   bluetooth.enable = true;
 
+  wacom.enable = true;
+  steam.enable = true;
+
 
   # Networking
   networking =  {
@@ -48,6 +51,7 @@
       polybar
       firefox
       gimp
+      obsidian
     ];
   };
 

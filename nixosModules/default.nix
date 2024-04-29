@@ -13,6 +13,9 @@
 		./services/nvidia.nix
 		./sddm/sddm.nix
 		./services/bluetooth.nix
+		
+		./wacom.nix
+		./steam.nix
 	];
 	
 	base-config.enable = lib.mkDefault true;
