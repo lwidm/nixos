@@ -61,6 +61,7 @@
     nix-prefetch-git
     nix-prefetch-github
     neofetch
+    wdisplays
   ];
 
 
