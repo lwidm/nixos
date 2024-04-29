@@ -11,12 +11,6 @@
 		programs.steam = {
 			enable = true;
 			remotePlay.openFirewall = true;
-			dedicatedServer.openFirewall = true;
-
-			package = pkgs.steam.override {
-				withPrimus = true;
-				extraPkgs = pkgs: [ bumblebee glxinfo ];
-			};
 		};
 
 		programs.java.enable = true;
