@@ -13,7 +13,7 @@
     # };
   };
 
-  outputs = { nixpkgs, ... }@inputs: {
+  outputs = { nixpkgs, nixos-wsl, ... }@inputs: {
     nixosConfigurations = {
 
       VboxDesktop = nixpkgs.lib.nixosSystem {
@@ -30,7 +30,7 @@
         modules = [
           ./hosts/wslLaptop/configuration.nix
           ./nixosModules
-	  nixos-wsl.nixosModules.wsl
+	  nixos-wsl.nixosModules.wsl.default
           # inputs.home-manager.nixosModules.default
         ];
       };
