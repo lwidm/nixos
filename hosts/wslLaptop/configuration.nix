@@ -10,7 +10,7 @@
 {
   imports = [
     # include NixOS-WSL modules
-    <nixos-wsl/modules>
+    # <nixos-wsl/modules>
   ];
 
   fonts.enable = true;
