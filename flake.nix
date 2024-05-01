@@ -30,7 +30,7 @@
         modules = [
           ./hosts/wslLaptop/configuration.nix
           ./nixosModules
-	  nixos-wsl.nixosModules.wsl.default
+	  nixos-wsl.nixosModules.wsl
           # inputs.home-manager.nixosModules.default
         ];
       };
