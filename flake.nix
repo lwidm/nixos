@@ -24,6 +24,15 @@
         ];
       };
 
+      wslLaptop = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/wslLaptop/configuration.nix
+          ./nixosModules
+          # inputs.home-manager.nixosModules.default
+        ];
+      };
+
       Desktop = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
