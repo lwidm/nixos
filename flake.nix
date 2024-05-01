@@ -5,6 +5,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixos-wsl.url = "github:nix-community/NixOs-WSL/main";
 
     # home-manager = {
     #   url = "github:nix-community/home-manager";
@@ -29,6 +30,7 @@
         modules = [
           ./hosts/wslLaptop/configuration.nix
           ./nixosModules
+	  nixos-wsl.nixosModules.wsl
           # inputs.home-manager.nixosModules.default
         ];
       };
