@@ -21,6 +21,9 @@
   sddm.enable = false;
   bluetooth.enable = false;
 
+  grub.enable = false;
+  systemd-boot.enable = false;
+
   wsl.enable = true;
   wsl.defaultUser = "nixos";
 
