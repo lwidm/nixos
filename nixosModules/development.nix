@@ -17,6 +17,7 @@
 
       (python3.withPackages (python-pkgs: [] ))
       clang
+      cmake
       gnumake
       cargo
       zip
