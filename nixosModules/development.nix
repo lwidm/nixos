@@ -25,7 +25,7 @@
     ];
 
     environment.variables = {
-      C = "/run/current-system/sw/bin/clang";
+      CC = "/run/current-system/sw/bin/clang";
       CXX = "/run/current-system/sw/bin/clang++";
     };
 
