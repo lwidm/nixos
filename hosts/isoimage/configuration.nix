@@ -4,6 +4,10 @@
 		"${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
 	];
 
+	environment.variables = {
+		MYSYSTEM = "isoimage";
+	};
+
 	base-config.enable = true;
 	systemd-boot.enable = false;
 	grub.enable = false;

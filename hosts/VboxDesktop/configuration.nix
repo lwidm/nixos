@@ -9,6 +9,10 @@
     ];
 
 
+  environment.variables = {
+    MYSYSTEM = "VboxDesktop";
+  };
+
   fonts.enable = true;
   X11_i3_startx.enable = false;
   hyprland.enable = true;

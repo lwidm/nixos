@@ -8,6 +8,9 @@
       ./hardware-configuration.nix
     ];
 
+  environment.variables = {
+    MYSYSTEM = "Desktop";
+  };
 
   fonts.enable = true;
   X11_i3_startx.enable = false;
