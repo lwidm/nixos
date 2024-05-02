@@ -25,6 +25,15 @@
         ];
       };
 
+      VboxLaptop = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/VboxLaptop/configuration.nix
+          ./nixosModules
+          # inputs.home-manager.nixosModules.default
+        ];
+      };
+
       wslLaptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
