@@ -31,9 +31,6 @@
     nix-prefetch
     nix-prefetch-git
     neofetch
-    github-cli
-    git
-    neovim
   ];
 
   # This value determines the NixOS release from which the default
