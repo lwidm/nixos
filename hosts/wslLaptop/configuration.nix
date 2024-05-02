@@ -14,7 +14,7 @@
   ];
 
   environment.variables = {
-    MYSYSTEM = "wslLaptop"
+    MYSYSTEM = "wslLaptop";
   };
 
   fonts.enable = true;
