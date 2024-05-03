@@ -13,7 +13,6 @@
 		./services/nvidia.nix
 		./sddm/sddm.nix
 		./services/bluetooth.nix
-		./shell/shell.nix
 		
 		./wacom.nix
 		./steam.nix
