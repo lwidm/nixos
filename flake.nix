@@ -20,7 +20,7 @@
   in
   {
 
-    devShells.${system}.default = ( import ./shell.nix { inherit pkgs; });
+    devShells.${system}.default = ( import ./shells/shell.nix { inherit pkgs; });
 
     nixosConfigurations = {
 
