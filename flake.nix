@@ -20,8 +20,6 @@
   in
   {
 
-    devShells.${system}.default = ( import ./shells/shell.nix { inherit pkgs; });
-
     nixosConfigurations = {
 
       VboxDesktop = nixpkgs.lib.nixosSystem {
