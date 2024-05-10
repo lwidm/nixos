@@ -59,6 +59,15 @@
           # inputs.home-manager.nixosModules.default
         ];
       };
+      
+      Laptop = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/Laptop/configuration.nix
+          ./nixosModules
+          # inputs.home-manager.nixosModules.default
+        ];
+      };
 
       isoimage = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
