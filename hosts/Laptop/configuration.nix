@@ -15,6 +15,8 @@
   grub.enable = true;
   systemd-boot.enable = false;
 
+  DellXPS15.enable = true;
+
   fonts.enable = true;
   X11_i3_startx.enable = false;
   hyprland.enable = true;

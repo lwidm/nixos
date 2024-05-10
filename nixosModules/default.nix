@@ -14,6 +14,9 @@
 		./sddm/sddm.nix
 		./services/bluetooth.nix
 		
+		./Laptop/thermald_tlp.nix
+		./Laptop/DellXPS15.nix
+
 		./wacom.nix
 		./steam.nix
 	];
