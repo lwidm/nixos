@@ -18,6 +18,8 @@
 		environment.sessionVariables = {
 			# Hint electron apps to use wayland
 			NIXOS_OZONE_WL = "1";
+			DEFAULT_BROWSER = "${pkgs.firefox}/bin/firefox";
+
 		};
 
 		environment.systemPackages = with pkgs; [
@@ -45,10 +47,6 @@
 			extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 		};
 
-		xdg.mime.defaultApplications = {
-			"x-www-broweser" = "firefox";
-		};
-		
  		# environment.sessionVariables = lib.mkIf (config.nvidia.enable) {
 		#	# If your curser becomes invisible
 		#	WLR_NO_HARDWARE_CURSORS = "1";
