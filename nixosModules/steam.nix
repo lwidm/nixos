@@ -19,6 +19,10 @@
 			protonup
 		];
 
+		environment.sessionVariables = {
+			STEAM_EXTRA_COMPAT_TOOLS_PATH = "/home/lukas/.steam/root/compatibilitytools.d";
+		};
+
 		programs.gamemode.enable = true;
 
 		# programs.java.enable = true;
