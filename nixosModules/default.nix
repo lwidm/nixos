@@ -6,6 +6,7 @@
 		./systemd-boot.nix
 		./fonts.nix
 		./development.nix
+		./linuxDebug.nix
 		./services/gtk-conf.nix
 		./services/qt-conf.nix
 		./services/X11_i3_startx.nix

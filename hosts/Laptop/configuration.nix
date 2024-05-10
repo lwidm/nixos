@@ -24,6 +24,7 @@
   nvidia.enable = true;
   sddm.enable = true;
   bluetooth.enable = true;
+  linuxDebug.enable = true;
 
   wacom.enable = true;
   steam.enable = true;
