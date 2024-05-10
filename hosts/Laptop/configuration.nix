@@ -37,11 +37,8 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-
-  # Virtualbox
-  virtualisation.virtualbox.guest.enable = true;
-  # virtualisation.virtualbox.guest.x11 = true;
-
+  # Touchpad settings
+  services.xserver.libinput.naturalScrolling = false;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lukas = {
