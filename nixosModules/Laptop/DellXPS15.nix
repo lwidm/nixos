@@ -10,28 +10,33 @@
 
 		thermald_tlp.enable = true;
 		
-		specialisation = { 
-			nvidia.configuration = { 
-				# Nvidia Configuration 
-				services.xserver.videoDrivers = [ "nvidia" ]; 
-				hardware.opengl.enable = true; 
+		nvidia.configuration = { 
 
-				# Optionally, you may need to select the appropriate driver version for your specific GPU. 
-				hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable; 
+			hardware.nvidia.prime = { 
+				offload = {
+					enable = true;
+					enableOffloadCmd = true;
+				};
 
-				# nvidia-drm.modeset=1 is required for some wayland compositors, e.g. sway 
-				hardware.nvidia.modesetting.enable = true; 
+				# Bus ID of the NVIDIA GPU. You can find it using lspci, either under 3D or VGA 
+				nvidiaBusId = "PCI:01:00:0"; 
 
-				hardware.nvidia.prime = { 
-					sync.enable = true; 
+				# Bus ID of the Intel GPU. You can find it using lspci, either under 3D or VGA 
+				intelBusId = "PCI:00:02:0"; 
+			};
 
-					# Bus ID of the NVIDIA GPU. You can find it using lspci, either under 3D or VGA 
-					nvidiaBusId = "PCI:01:00:0"; 
-
-					# Bus ID of the Intel GPU. You can find it using lspci, either under 3D or VGA 
-					intelBusId = "PCI:00:02:0"; 
+			specialization = {
+				dgpu.configuration = {
+					hardware.nvidia = {
+						prime.sync.enable = lib.mkForce true;
+						prime.offload = {
+							enable = lib.mkForce false;
+							enableOffloadCmd = lib.mkForce false;
+						};
+					};
 				};
 			};
+						
 		};
 
 	};

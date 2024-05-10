@@ -74,6 +74,7 @@
       github-cli
       stow
       tree
+      fzf
     ];
 
   };
