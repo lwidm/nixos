@@ -24,17 +24,17 @@
 			intelBusId = "PCI:00:02:0"; 
 		};
 
-		specialisation = {
-			dgpu.configuration = {
-				hardware.nvidia = {
-					prime.sync.enable = lib.mkForce true;
-					prime.offload = {
-						enable = lib.mkForce false;
-						enableOffloadCmd = lib.mkForce false;
-					};
-				};
-			};
-		};
+		# specialisation = {
+		# 	dgpu.configuration = {
+		# 		hardware.nvidia = {
+		# 			prime.sync.enable = lib.mkForce true;
+		# 			prime.offload = {
+		# 				enable = lib.mkForce false;
+		# 				enableOffloadCmd = lib.mkForce false;
+		# 			};
+		# 		};
+		# 	};
+		# };
 
 	};
 
