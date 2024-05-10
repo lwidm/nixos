@@ -38,7 +38,7 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Touchpad settings
-  services.xserver.libinput.naturalScrolling = true;
+ services.xserver.libinput.touchpad.naturalScrolling = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lukas = {
