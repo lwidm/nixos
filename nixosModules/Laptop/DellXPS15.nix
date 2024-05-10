@@ -24,7 +24,7 @@
 			intelBusId = "PCI:00:02:0"; 
 		};
 
-		specialization = {
+		specialisation = {
 			dgpu.configuration = {
 				hardware.nvidia = {
 					prime.sync.enable = lib.mkForce true;
