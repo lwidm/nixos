@@ -11,7 +11,15 @@
 		programs.steam = {
 			enable = true;
 			remotePlay.openFirewall = true;
+			gamescopeSession.enable = true;
 		};
+
+		environment.systemPackages = with pkgs; [
+			mangohud
+			protunup
+		];
+
+		porgrams.gamemode.enable = true;
 
 		# programs.java.enable = true;
 		# programs.steam-package = pkgs.steam.override { withJava = true; };
