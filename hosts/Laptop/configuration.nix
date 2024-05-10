@@ -23,8 +23,6 @@
   wacom.enable = true;
   steam.enable = true;
 
-  xdg.enable = true;
-
   # Networking
   networking =  {
     hostName = "lwidmVboxNixos"; # Define your hostname.
