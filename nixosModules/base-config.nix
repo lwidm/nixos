@@ -43,6 +43,10 @@
       NIXCONF = "/etc/nixos/";
     };
 
+    # Touchpad settings
+    services.xserver.libinput.enable = true;
+    services.xserver.libinput.touchpad.naturalScrolling = true;
+
     # Zsh
     programs.zsh.enable = true;
     users.defaultUserShell = pkgs.zsh;
