@@ -19,7 +19,7 @@
 			protunup
 		];
 
-		porgrams.gamemode.enable = true;
+		programs.gamemode.enable = true;
 
 		# programs.java.enable = true;
 		# programs.steam-package = pkgs.steam.override { withJava = true; };
