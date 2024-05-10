@@ -44,6 +44,10 @@
 			wlr.enable = true;
 			extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 		};
+
+		xdg.mime.defaultApplications = {
+			"x-www-broweser" = "firefox";
+		};
 		
  		# environment.sessionVariables = lib.mkIf (config.nvidia.enable) {
 		#	# If your curser becomes invisible
