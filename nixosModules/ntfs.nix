@@ -10,7 +10,7 @@
 
 		environment.systemPackages = with pkgs; [
 			fuse
-			ntfs-3g
+			ntfs3g
 		];
 
 	};
