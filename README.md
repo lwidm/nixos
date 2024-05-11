@@ -39,3 +39,14 @@ To view the log, run the following:
 ```zsh
 journalctl --user -t onedrive | less
 ```
+
+## Steam
+
+### initialization
+run
+```zsh
+protonup
+```
+
+### dgpu
+to use deticated graphics (on Laptops with both integrated and deticated graphics) either start the system with the dgpu specialisation from the boot menu ore prepend the game executable with `nvidia-offload <executable>` (this can be done in the steam settings)

@@ -22,6 +22,7 @@
   nvidia.enable = true;
   sddm.enable = true;
   bluetooth.enable = true;
+  ntfs.enable = true;
 
   wacom.enable = true;
   steam.enable = true;
