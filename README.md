@@ -50,3 +50,13 @@ protonup
 
 ### dgpu
 to use deticated graphics (on Laptops with both integrated and deticated graphics) either start the system with the dgpu specialisation from the boot menu ore prepend the game executable with `nvidia-offload <executable>` (this can be done in the steam settings)
+
+## mounting ntfs drives
+first enable the ntfs.nix modules in `configuration.nix`
+```nix
+ntfs.enable = true;
+```
+then you should be able to mount the drive by running
+```zsh
+sudo mount -t ntfs-3g /dev/sdxx /mnt/driveName
+```
