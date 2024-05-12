@@ -34,7 +34,7 @@
 			"steam-run"
 		];
 
-		i18n.supporedLocales = [
+		i18n.supportedLocales = [
 			"en_US.UTF-8"
 		];
 
