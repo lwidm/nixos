@@ -25,7 +25,6 @@
   sddm.enable = true;
   bluetooth.enable = true;
   linuxDebug.enable = true;
-  pulseaudio.enable = true;
 
   wacom.enable = true;
   steam.enable = true;

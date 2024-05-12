@@ -21,7 +21,6 @@
   development.enable = true;
   nvidia.enable = true;
   sddm.enable = true;
-  pulseaudio.enable = true;
 
   # Networking
   networking =  {
