@@ -26,7 +26,7 @@
   linuxDebug.enable = true;
 
   wacom.enable = true;
-  steam.enable = false;
+  steam.enable = true;
 
 
   # Networking
