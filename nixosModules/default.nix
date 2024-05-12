@@ -24,7 +24,5 @@
 	];
 	
 	base-config.enable = lib.mkDefault true;
-	grub.enable = lib.mkDefault false;
-	systemd-boot.enable = lib.mkDefault true;
 
 }
