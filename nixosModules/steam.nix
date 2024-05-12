@@ -38,11 +38,6 @@
 		# 	"en_US.UTF-8/UTF-8"
 		# ];
 
-		networking.extraHosts =
-		''
-			2.21.22.169 client-download.steampowered.com
-		'';
-
 	};
 
 }
