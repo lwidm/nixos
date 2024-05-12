@@ -6,7 +6,7 @@
 		pulseaudio.enable = lib.mkEnableOption "enable pulseaudio";
 	};
 
-	config = {
+	config = lib.mkIf config.pulseaudio.enable {
 
 		hardware.pulseaudio = {
 			enable = true;
