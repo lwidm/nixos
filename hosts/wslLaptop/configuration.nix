@@ -24,6 +24,7 @@
   nvidia.enable = false;
   sddm.enable = false;
   bluetooth.enable = false;
+  pulseaudio.enable = true;
 
   grub.enable = false;
   systemd-boot.enable = false;

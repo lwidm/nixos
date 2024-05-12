@@ -23,9 +23,11 @@
   sddm.enable = true;
   bluetooth.enable = true;
   ntfs.enable = true;
+  linuxDebug.enable = true;
+  pulseaudio.enable = true
 
   wacom.enable = true;
-  steam.enable = true;
+  steam.enable = false;
 
 
   # Networking
@@ -49,7 +51,7 @@
     description = "lukas widmer";
     useDefaultShell = true;
     # WARNING: not sure whether it is smart to add the user to the input group
-    extraGroups = [ "wheel" "networkmanager" "input" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "audio" "networkmanager" "input" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       polybar
       firefox

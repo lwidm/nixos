@@ -14,6 +14,7 @@
 		./services/hyprland.nix
 		./services/nvidia.nix
 		./services/bluetooth.nix
+		./services/pulseaudio.nix
 		./sddm/sddm.nix
 		
 		./Laptop/thermald-tlp.nix

@@ -21,6 +21,7 @@
   development.enable = true;
   nvidia.enable = false;
   sddm.enable = true;
+  pulseaudio.enable = true;
 
   # Networking
   networking =  {
@@ -47,7 +48,7 @@
     description = "lukas widmer";
     useDefaultShell = true;
     # WARNING: not sure whether it is smart to add the user to the input group
-    extraGroups = [ "wheel" "networkmanager" "input" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "audio" "networkmanager" "input" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       polybar
       firefox
