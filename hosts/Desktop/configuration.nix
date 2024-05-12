@@ -24,7 +24,7 @@
   bluetooth.enable = true;
   ntfs.enable = true;
   linuxDebug.enable = true;
-  pulseaudio.enable = true
+  pulseaudio.enable = true;
 
   wacom.enable = true;
   steam.enable = false;
