@@ -34,6 +34,10 @@
 			"steam-run"
 		];
 
+		i18n.supporedLocales = [
+			"en_US.UTF-8"
+		];
+
 	};
 
 }
