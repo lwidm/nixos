@@ -53,8 +53,11 @@
     packages = with pkgs; [
       polybar
       firefox
+      thunderbird
       gimp
       obsidian
+      anki
+      zoom
     ];
   };
 
