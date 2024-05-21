@@ -40,6 +40,17 @@
         ];
       };
 
+      wslDesktop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/wslDesktop/configuration.nix
+          ./nixosModules
+	  nixos-wsl.nixosModules.wsl
+          # inputs.home-manager.nixosModules.default
+        ];
+      };
+
       wslLaptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
