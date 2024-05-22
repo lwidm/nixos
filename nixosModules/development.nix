@@ -15,7 +15,11 @@
       neovim
       tmux
 
-      (python3.withPackages (python-pkgs: [] ))
+      (python3.withPackages (python-pkgs: [
+        matplotlib
+        scipy
+        numpy
+      ] ))
       clang
       cmake
       gnumake
