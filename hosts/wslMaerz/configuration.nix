@@ -15,6 +15,7 @@
 
   environment.variables = {
     MYSYSTEM = "wslMaerz";
+    WORKDIR = "/mnt/g/K_TECH/GGR-Datenbank/Berechnung\ Neu/02\ In\ Arbeit/python/2023_Lukas/";
   };
 
   fonts.enable = true;
