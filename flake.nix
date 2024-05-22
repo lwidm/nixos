@@ -62,6 +62,17 @@
         ];
       };
 
+      wslMaerz = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [ 
+          ./hosts/wslMaerz/configuration.nix
+          ./nixosModules
+          nixos-wsl.nixosModules.wsl
+          # inputs.home-manager.nixosModules.default
+        ];
+      };
+
       Desktop = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
