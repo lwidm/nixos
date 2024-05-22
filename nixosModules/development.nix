@@ -15,7 +15,7 @@
       neovim
       tmux
 
-      (python3.withPackages (python-pkgs: with pyhton-pkgs; [
+      (python3.withPackages (python-pkgs: with python-pkgs; [
         matplotlib
         scipy
         numpy
