@@ -11,6 +11,7 @@
   imports = [
     # include NixOS-WSL modules
     # <nixos-wsl/modules>
+      ./hardware-configuration.nix
   ];
 
   environment.variables = {
@@ -26,6 +27,7 @@
   sddm.enable = false;
   bluetooth.enable = false;
 
+  boot.loader.grub.enable = true;
   grub.enable = false;
   systemd-boot.enable = false;
 
