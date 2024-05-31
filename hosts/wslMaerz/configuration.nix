@@ -27,7 +27,6 @@
   sddm.enable = false;
   bluetooth.enable = false;
 
-  boot.loader.grub.enable = true;
   grub.enable = false;
   systemd-boot.enable = false;
 
