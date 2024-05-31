@@ -64,12 +64,12 @@
     };
 
   fileSystems."/mnt/c" =
-    { device = "C:\134";
+    { device = "C:";
       fsType = "9p";
     };
 
   fileSystems."/mnt/d" =
-    { device = "D:\134";
+    { device = "D:";
       fsType = "9p";
     };
 
