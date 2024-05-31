@@ -36,10 +36,10 @@
       fsType = "ext4";
     };
 
-  fileSystems."/mnt/wslg" =
-    { device = "none";
-      fsType = "tmpfs";
-    };
+  # fileSystems."/mnt/wslg" =
+  #   { device = "none";
+  #     fsType = "tmpfs";
+  #   };
 
   fileSystems."/mnt/wslg/distro" =
     { device = "";
