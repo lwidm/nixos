@@ -11,25 +11,25 @@
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/mnt/wsl" =
-    { device = "none";
-      fsType = "tmpfs";
-    };
-
-  fileSystems."/usr/lib/wsl/drivers" =
-    { device = "none";
-      fsType = "9p";
-    };
-
-  fileSystems."/lib/modules" =
-    { device = "none";
-      fsType = "tmpfs";
-    };
-
-  fileSystems."/lib/modules/5.15.146.1-microsoft-standard-WSL2" =
-    { device = "none";
-      fsType = "overlay";
-    };
+  # fileSystems."/mnt/wsl" =
+  #   { device = "none";
+  #     fsType = "tmpfs";
+  #   };
+  #
+  # fileSystems."/usr/lib/wsl/drivers" =
+  #   { device = "none";
+  #     fsType = "9p";
+  #   };
+  #
+  # fileSystems."/lib/modules" =
+  #   { device = "none";
+  #     fsType = "tmpfs";
+  #   };
+  #
+  # fileSystems."/lib/modules/5.15.146.1-microsoft-standard-WSL2" =
+  #   { device = "none";
+  #     fsType = "overlay";
+  #   };
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/474d8553-fcae-45c8-8380-1cb2c43c7f8c";
@@ -41,27 +41,27 @@
   #     fsType = "tmpfs";
   #   };
 
-  fileSystems."/mnt/wslg/distro" =
-    { device = "";
-      fsType = "none";
-      options = [ "bind" ];
-    };
-
-  fileSystems."/usr/lib/wsl/lib" =
-    { device = "none";
-      fsType = "overlay";
-    };
-
-  fileSystems."/mnt/wslg/doc" =
-    { device = "none";
-      fsType = "overlay";
-    };
-
-  fileSystems."/tmp/.X11-unix" =
-    { device = "/mnt/wslg/.X11-unix";
-      fsType = "none";
-      options = [ "bind" ];
-    };
+  # fileSystems."/mnt/wslg/distro" =
+  #   { device = "";
+  #     fsType = "none";
+  #     options = [ "bind" ];
+  #   };
+  #
+  # fileSystems."/usr/lib/wsl/lib" =
+  #   { device = "none";
+  #     fsType = "overlay";
+  #   };
+  #
+  # fileSystems."/mnt/wslg/doc" =
+  #   { device = "none";
+  #     fsType = "overlay";
+  #   };
+  #
+  # fileSystems."/tmp/.X11-unix" =
+  #   { device = "/mnt/wslg/.X11-unix";
+  #     fsType = "none";
+  #     options = [ "bind" ];
+  #   };
 
   fileSystems."/mnt/c" =
     { device = "C:";
