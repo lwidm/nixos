@@ -1,6 +1,6 @@
 # development.nix
 
-{ pkgs, lib, config, ... }: {
+{ pkgs, lib, config, inputs, ... }: {
 
   options = {
 
@@ -11,9 +11,12 @@
 
   config = lib.mkIf config.development.enable {
 
-    progams.neovim = {
+    programs.neovim = {
       enable = true;
+      defaultEditor = true;
       package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
+      viAlias = true;
+      vimAlias = true;
     };
 
     environment.systemPackages = with pkgs; [    # packages for i3
