@@ -14,6 +14,7 @@
     environment.systemPackages = with pkgs; [    # packages for i3
       neovim
       tmux
+      ripgrep
 
       nodejs
       (python3.withPackages (python-pkgs: with python-pkgs; [
