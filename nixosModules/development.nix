@@ -11,8 +11,12 @@
 
   config = lib.mkIf config.development.enable {
 
+    progams.neovim = {
+      enable = true;
+      package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
+    };
+
     environment.systemPackages = with pkgs; [    # packages for i3
-      neovim
       tmux
       ripgrep
 
