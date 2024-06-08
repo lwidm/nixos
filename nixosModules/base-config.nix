@@ -84,7 +84,7 @@
       tree
       fzf
       nil
-      nixpgs-fmt
+      nixpkgs-fmt
       nixfmt-rfc-style
     ];
   };
