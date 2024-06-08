@@ -17,7 +17,7 @@
       openFirewall = true;
     };
 
-    services.printing.drivers = with pkgs; [ epsonscan2 peson-escpr2 ];
+    services.printing.drivers = with pkgs; [ epsonscan2 epson-escpr2 ];
   };
 
 }
