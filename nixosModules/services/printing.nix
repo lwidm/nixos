@@ -9,15 +9,25 @@
   };
 
   config = lib.mkIf config.printing.enable {
-    services.printing.enable = true;
 
     services.avahi = {
       enable = true;
       nssmdns4 = true;
       openFirewall = true;
+      publish = {
+        enable = true;
+        userServices = true;
+      };
     };
-
-    services.printing.drivers = with pkgs; [ epson-escpr2 ];
+    services.printing = {
+      enable = true;
+      listenAddresses = [ "*:631" ];
+      allowFrom = [ "all" ];
+      browsing = true;
+      defaultShared = true;
+      openFirewall = true;
+      drivers = with pkgs; [ epson-escpr2 ];
+    };
 
     hardware.printers = {
       ensurePrinters = [{
@@ -29,10 +39,10 @@
           "epson-inkjet-printer-escpr2/Epson-ET-3850_Series-epson-escpr2-en.ppd";
         ppdOptions = { PageSize = "A4"; };
       }];
-      ensureDefaultPrinter = "Epson-ET-3850_Series";
+      ensureDefaultPrinter = "Epson_ET-3850_Series";
     };
 
-    environment.systemPackages = with pkgs; [    # packages for i3
+    environment.systemPackages = with pkgs; [
       epsonscan2
     ];
 
