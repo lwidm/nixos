@@ -1,56 +1,61 @@
 # hyprland.nix
 
-{ pkgs, lib, config, ... }: {
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+{
 
-	options = {
-		hyprland.enable = lib.mkEnableOption "enables hyprland";
-	};
+  options = {
+    hyprland.enable = lib.mkEnableOption "enables hyprland";
+  };
 
-	config = lib.mkIf config.hyprland.enable {
-		
-		gtk-conf.enable = true;
-		qt-conf.enable = true;
+  config = lib.mkIf config.hyprland.enable {
 
-		programs.hyprland = {
-			enable = true;
-			xwayland.enable = true;
-		};
-		environment.sessionVariables = {
-			# Hint electron apps to use wayland
-			NIXOS_OZONE_WL = "1";
-			DEFAULT_BROWSER = "${pkgs.firefox}/bin/firefox";
+    gtk-conf.enable = true;
+    qt-conf.enable = true;
 
-		};
+    programs.hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
+    environment.sessionVariables = {
+      # Hint electron apps to use wayland
+      NIXOS_OZONE_WL = "1";
+      DEFAULT_BROWSER = "${pkgs.firefox}/bin/firefox";
+    };
 
-		environment.systemPackages = with pkgs; [
-			waybar
-			(waybar.overrideAttrs (oldAttrs: {
-				mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-			}) )
-			mako
-			libnotify
-			hyprpaper
-			wl-clipboard
-			wlroots
-			alacritty
-			foot
-			wofi
-		];
+    environment.systemPackages = with pkgs; [
+      waybar
+      (waybar.overrideAttrs (oldAttrs: {
+        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+      }))
+      mako
+      libnotify
+      hyprpaper
+      wl-clipboard
+      wlroots
+      # alacritty
+      kitty
+      foot
+      wofi
+    ];
 
-		services.xserver.libinput.enable = true;
+    services.xserver.libinput.enable = true;
 
-		security.polkit.enable = true;
+    security.polkit.enable = true;
 
-		xdg.portal = {
-			enable = true;
-			wlr.enable = true;
-			extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-		};
+    xdg.portal = {
+      enable = true;
+      wlr.enable = true;
+      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    };
 
- 		# environment.sessionVariables = lib.mkIf (config.nvidia.enable) {
-		#	# If your curser becomes invisible
-		#	WLR_NO_HARDWARE_CURSORS = "1";
-		#};
-	};
-
+    # environment.sessionVariables = lib.mkIf (config.nvidia.enable) {
+    #	# If your curser becomes invisible
+    #	WLR_NO_HARDWARE_CURSORS = "1";
+    #};
+  };
 }
