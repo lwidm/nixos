@@ -1,15 +1,23 @@
 # base-config.nix
 
-{ pkgs, lib, config, ... }:  {
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+{
 
   options = {
     base-config.enable = lib.mkEnableOption "enables base-config.nix";
   };
 
-
   config = lib.mkIf config.base-config.enable {
 
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    nix.settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
 
     nixpkgs.config.allowUnfree = true;
 
@@ -68,15 +76,16 @@
     # essential packages
     environment.systemPackages = with pkgs; [
       neovim
-      vim 
+      vim
       wget
       git
       github-cli
       stow
       tree
       fzf
+      nil
+      nixpgs-fmt
+      nixfmt-rfc-style
     ];
-
   };
-
 }
