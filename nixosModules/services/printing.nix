@@ -39,7 +39,7 @@
           "epson-inkjet-printer-escpr2/Epson-ET-3850_Series-epson-escpr2-en.ppd";
         ppdOptions = { PageSize = "A4"; };
       }];
-      ensureDefaultPrinter = "Epson_ET-3850_Series";
+      ensureDefaultPrinter = "EPSON_ET-3850_Series";
     };
 
     environment.systemPackages = with pkgs; [
