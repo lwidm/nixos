@@ -19,13 +19,14 @@
         userServices = true;
       };
     };
+
     services.printing = {
       enable = true;
-      listenAddresses = [ "*:631" ];
-      allowFrom = [ "all" ];
-      browsing = true;
-      defaultShared = true;
-      openFirewall = true;
+      # listenAddresses = [ "*:631" ];
+      # allowFrom = [ "all" ];
+      # browsing = true;
+      # defaultShared = true;
+      # openFirewall = true;
       drivers = with pkgs; [ epson-escpr2 ];
     };
 
@@ -44,7 +45,10 @@
 
     environment.systemPackages = with pkgs; [
       epsonscan2
+      xsane
     ];
+
+    hardware.sane.enable = true;
 
   };
 
