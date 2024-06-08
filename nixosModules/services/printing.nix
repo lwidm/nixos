@@ -1,4 +1,4 @@
-# nixosModules/printing.nix
+# nixosModules/services/printing.nix
 
 { pkgs, lib, config, ... }: {
 
