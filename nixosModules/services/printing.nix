@@ -17,7 +17,7 @@
       openFirewall = true;
     };
 
-    services.printing.drivers = with pkgs; [ epsonscan2 epson-escpr2 ];
+    services.printing.drivers = with pkgs; [ epson-escpr2 ];
 
     hardware.printers = {
       ensurePrinters = [{
@@ -30,6 +30,10 @@
         ppdOptions = { PageSize = "A4"; };
       }];
     };
+
+    environment.systemPackages = with pkgs; [    # packages for i3
+      epsonscan2
+    ];
 
   };
 
