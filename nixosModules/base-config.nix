@@ -86,6 +86,11 @@
       nil
       nixpkgs-fmt
       nixfmt-rfc-style
+
+      tldr
+      zoxide
+      eza
+      btop
     ];
   };
 }
