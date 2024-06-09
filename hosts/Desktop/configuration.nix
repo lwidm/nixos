@@ -1,13 +1,23 @@
 # ./hosts/default/configuration.nix
 
-{ config, stdenv, lib, pkgs, inputs, ... }:
+{
+  config,
+  stdenv,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
 
-  environment.variables = { MYSYSTEM = "Desktop"; };
+  environment.variables = {
+    MYSYSTEM = "Desktop";
+  };
 
   grub.enable = true;
   systemd-boot.enable = false;
@@ -24,7 +34,10 @@
   printing.enable = true;
 
   wacom.enable = true;
+
+  # gaming
   steam.enable = true;
+  ksp.enable = true;
 
   # Networking
   networking = {
@@ -115,6 +128,4 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
-

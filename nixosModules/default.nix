@@ -1,4 +1,5 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }:
+{
 
   imports = [
     ./base-config.nix
@@ -22,9 +23,11 @@
     ./Laptop/DellXPS15.nix
 
     ./wacom.nix
-    ./steam.nix
+
+    # gaming
+    ./games/steam.nix
+    ./games/ksp.nix
   ];
 
   base-config.enable = lib.mkDefault true;
-
 }
