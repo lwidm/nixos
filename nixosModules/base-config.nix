@@ -91,6 +91,8 @@
       zoxide
       eza
       btop
+
+      pavucontrol
     ];
   };
 }

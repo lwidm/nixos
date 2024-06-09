@@ -1,18 +1,24 @@
 # bluetooth.nix
 
-{ pkgs, lib, config, ... }: {
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+{
 
-	options = {
-		bluetooth.enable = lib.mkEnableOption "enable bluetooth.nix";
-	};
+  options = {
+    bluetooth.enable = lib.mkEnableOption "enable bluetooth.nix";
+  };
 
-	config = lib.mkIf config.bluetooth.enable {
+  config = lib.mkIf config.bluetooth.enable {
 
-		hardware.bluetooth.enable = true;
-		hardware.bluetooth.powerOnBoot = true;
+    hardware.bluetooth.enable = true;
+    hardware.bluetooth.powerOnBoot = true;
 
-		services.blueman.enable = true;
+    services.blueman.enable = true;
 
-	};
-
+    environment.systemPackages = with pkgs; [ bluetuith ];
+  };
 }

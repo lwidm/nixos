@@ -73,7 +73,8 @@
       gimp
       obsidian
       anki
-      zoom
+      zoom-us
+      discord
     ];
   };
 
