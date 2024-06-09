@@ -1,12 +1,19 @@
 # ./hosts/default/configuration.nix
 
-{ config, stdenv, lib, pkgs, inputs, ... }:
+{
+  config,
+  stdenv,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   environment.variables = {
     MYSYSTEM = "Desktop";
@@ -27,10 +34,13 @@
   linuxDebug.enable = true;
 
   wacom.enable = true;
+
+  # gaming
   steam.enable = true;
+  ksp.enable = true;
 
   # Networking
-  networking =  {
+  networking = {
     hostName = "lwidmVboxNixos"; # Define your hostname.
     networkmanager.enable = true;
     # wireless.enable = true; # Enables wireless support via wpa_supplicant.
@@ -50,7 +60,12 @@
     description = "lukas widmer";
     useDefaultShell = true;
     # WARNING: not sure whether it is smart to add the user to the input group
-    extraGroups = [ "wheel" "audio" "networkmanager" "input" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "wheel"
+      "audio"
+      "networkmanager"
+      "input"
+    ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       polybar
       firefox
@@ -64,14 +79,13 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [    
+  environment.systemPackages = with pkgs; [
     nix-prefetch
     nix-prefetch-git
     nix-prefetch-github
     neofetch
     wdisplays
   ];
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -114,6 +128,4 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
-
