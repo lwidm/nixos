@@ -41,7 +41,7 @@
 
   # Networking
   networking = {
-    hostName = "lwidmVboxNixos"; # Define your hostname.
+    hostName = "lwidmDesktopNixos"; # Define your hostname.
     networkmanager.enable = true;
     # wireless.enable = true; # Enables wireless support via wpa_supplicant.
   };
