@@ -1,13 +1,18 @@
 # development.nix
 
-{ pkgs, lib, config, inputs, ... }: {
+{
+  pkgs,
+  lib,
+  config,
+  inputs,
+  ...
+}:
+{
 
   options = {
 
     development.enable = lib.mkEnableOption "enables development.nix";
-
   };
-
 
   config = lib.mkIf config.development.enable {
 
@@ -19,17 +24,20 @@
       vimAlias = true;
     };
 
-    environment.systemPackages = with pkgs; [    # packages for i3
+    environment.systemPackages = with pkgs; [
+      # packages for i3
       tmux
       ripgrep
 
       nodejs
-      (python3.withPackages (python-pkgs: with python-pkgs; [
-        matplotlib
-        scipy
-        numpy
-      ] ))
-      clang
+      (python3.withPackages (
+        python-pkgs: with python-pkgs; [
+          matplotlib
+          scipy
+          numpy
+        ]
+      ))
+      llvmPackages.clang
       cmake
       gnumake
       cargo
@@ -41,6 +49,5 @@
       CC = "/run/current-system/sw/bin/clang";
       CXX = "/run/current-system/sw/bin/clang++";
     };
-
   };
 }
