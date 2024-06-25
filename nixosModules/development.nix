@@ -37,17 +37,17 @@
           numpy
         ]
       ))
-      llvmPackages.clang
-      cmake
-      gnumake
-      cargo
-      zip
-      unzip
+      # llvmPackages.clang
+      # cmake
+      # gnumake
+      # cargo
+      # zip
+      # unzip
     ];
 
-    environment.variables = {
-      CC = "/run/current-system/sw/bin/clang";
-      CXX = "/run/current-system/sw/bin/clang++";
-    };
+    # environment.variables = {
+    #   CC = "/run/current-system/sw/bin/clang";
+    #   CXX = "/run/current-system/sw/bin/clang++";
+    # };
   };
 }
