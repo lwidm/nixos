@@ -37,12 +37,19 @@
           numpy
         ]
       ))
-      # llvmPackages.clang
-      # cmake
-      # gnumake
-      # cargo
-      # zip
-      # unzip
+      nil
+      nixpkgs-fmt
+      nixfmt-rfc-style
+
+      llvmPackages.clang
+      clang-tools
+      cmake
+      cmake-language-server
+      cmake-format
+      gnumake
+      cargo
+      zip
+      unzip
     ];
 
     # environment.variables = {
