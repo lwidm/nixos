@@ -29,6 +29,7 @@
   nvidia.enable = true;
   sddm.enable = true;
   bluetooth.enable = true;
+  onedrive.enable = true;
   ntfs.enable = true;
   linuxDebug.enable = true;
   printing.enable = true;
@@ -51,8 +52,6 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  services.onedrive.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lukas = {

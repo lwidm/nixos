@@ -15,6 +15,7 @@
     ./services/hyprland.nix
     ./services/nvidia.nix
     ./services/bluetooth.nix
+    ./services/onedrive.nix
     ./services/pulseaudio.nix
     ./services/printing.nix
     ./sddm/sddm.nix
