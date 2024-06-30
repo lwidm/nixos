@@ -37,17 +37,24 @@
           numpy
         ]
       ))
+      nil
+      nixpkgs-fmt
+      nixfmt-rfc-style
+
       llvmPackages.clang
+      clang-tools
       cmake
+      cmake-language-server
+      cmake-format
       gnumake
       cargo
       zip
       unzip
     ];
 
-    environment.variables = {
-      CC = "/run/current-system/sw/bin/clang";
-      CXX = "/run/current-system/sw/bin/clang++";
-    };
+    # environment.variables = {
+    #   CC = "/run/current-system/sw/bin/clang";
+    #   CXX = "/run/current-system/sw/bin/clang++";
+    # };
   };
 }
