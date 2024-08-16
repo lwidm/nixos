@@ -51,6 +51,9 @@
       NIXCONF = "/etc/nixos/";
     };
 
+    # add Local Binary folder to PATH
+    environment.localBinInPath = true;
+
     # Touchpad settings
     services.xserver.libinput.enable = true;
     services.xserver.libinput.touchpad.naturalScrolling = true;
