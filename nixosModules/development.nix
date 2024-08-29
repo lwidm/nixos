@@ -19,6 +19,11 @@
     # add ~/.local/bin/ to $PATH
     environment.localBinInPath = true;
 
+    # BUG: Temporarily set CMAKE_INSTALL_PREFIX to local install folder. After figuring out how to use cmake to create derivations I might need to reverse this
+    environment.variables = rec {
+      CMAKE_INSTALL_PREFIX = "$HOME/.local";
+    };
+
     programs.neovim = {
       enable = true;
       defaultEditor = true;
