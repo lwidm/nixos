@@ -16,6 +16,9 @@
 
   config = lib.mkIf config.development.enable {
 
+    # add ~/.local/bin/ to $PATH
+    environment.localBinInPath = true;
+
     programs.neovim = {
       enable = true;
       defaultEditor = true;
