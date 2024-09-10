@@ -36,13 +36,13 @@
       mako
       libnotify
       hyprpaper
+      hyprshot
       wl-clipboard
       wlroots
       # alacritty
       kitty
       foot
       wofi
-      flameshot
     ];
 
     services.xserver.libinput.enable = true;
