@@ -6,6 +6,27 @@
   config,
   ...
 }:
+
+let
+  eww-custom = import ../../derivations/eww.nix { inherit pkgs; };
+  defaultPackages = with pkgs; [
+    waybar
+    (waybar.overrideAttrs (oldAttrs: {
+      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    }))
+    mako
+    libnotify
+    hyprpaper
+    hyprshot
+    wl-clipboard
+    wlroots
+    kitty
+    foot
+    wofi
+    dunst
+  ];
+  additionalPackages = [ eww-custom ];
+in
 {
 
   options = {
@@ -28,23 +49,9 @@
       XDG_CURRENT_DESKTOP = "Hyprland";
     };
 
-    environment.systemPackages = with pkgs; [
-      waybar
-      (waybar.overrideAttrs (oldAttrs: {
-        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-      }))
-      mako
-      libnotify
-      hyprpaper
-      hyprshot
-      wl-clipboard
-      wlroots
-      # alacritty
-      kitty
-      foot
-      wofi
-      eww
-      dunst
+    environment.systemPackages = lib.concatLists [
+      defaultPackages
+      additionalPackages
     ];
 
     services.xserver.libinput.enable = true;
