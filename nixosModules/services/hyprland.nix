@@ -43,6 +43,8 @@
       kitty
       foot
       wofi
+      eww
+      dunst
     ];
 
     services.xserver.libinput.enable = true;
