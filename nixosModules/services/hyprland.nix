@@ -41,6 +41,7 @@
       kitty
       foot
       wofi
+      (flameshot.override { enableWlrSupport = true; })
     ];
 
     services.xserver.libinput.enable = true;
