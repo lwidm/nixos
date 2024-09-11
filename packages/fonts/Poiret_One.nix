@@ -5,15 +5,19 @@
 }:
 
 pkgs.stdenv.mkDerivation {
+  pname = "Poiret_One";
 
-  name = "Poiret One Regular Font (From Google freefonts)";
-  src = ../../assets/.;
+  meta = {
+    description = "Poiret One font From Google freefonts, in css use the font name: Poiret One";
+    homepage = "https://fonts.google.com/specimen/Poiret+One";
+  };
 
-  dontUnpack = true;
+  src = ../../assets/Poiret_One.tar.gz;
 
-  installPhase = ''
+  unpackPhase = ''
     mkdir -p $out/share/fonts/truetype/
-    cp $src/PoiretOne-Regular.ttf $out/share/fonts/truetype/Poiret_One.ttf
-
+    ${pkgs.gnutar}/bin/tar -xzvf $src -C $out/share/fonts/truetype
   '';
+
+  installPhase = '''';
 }
