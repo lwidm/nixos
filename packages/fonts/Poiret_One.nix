@@ -7,10 +7,12 @@
 pkgs.stdenv.mkDerivation {
 
   name = "Poiret One Regular Font (From Google freefonts)";
-  src = "../../assets";
+  src = "./.";
+
+  dontUnpack = true;
 
   installPhase = ''
-    mkdir $out/share/fonts/truetype/
+    mkdir -p $out/share/fonts/truetype/
     cp $src/PoiretOne-Regular.ttf $out/share/fonts/truetype/Poiret_One.ttf
 
   '';
