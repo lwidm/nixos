@@ -6,6 +6,9 @@
   config,
   ...
 }:
+let
+  Poiret_One = pkgs.callPackage ../packages/fonts/Poiret_One.nix { inherit pkgs; };
+in
 {
 
   options = {
@@ -22,6 +25,7 @@
           "Hack"
         ];
       })
+      Poiret_One
     ];
   };
 }
