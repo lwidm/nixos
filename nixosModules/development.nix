@@ -38,6 +38,12 @@
       ripgrep
 
       nodejs
+      typescript
+      nodePackages_latest.typescript-language-server
+      nodePackages_latest.eslint
+      tailwindcss
+      prettierd
+
       (python3.withPackages (
         python-pkgs: with python-pkgs; [
           matplotlib
@@ -45,6 +51,8 @@
           numpy
         ]
       ))
+      pyright
+      black
       nil
       nixpkgs-fmt
       nixfmt-rfc-style

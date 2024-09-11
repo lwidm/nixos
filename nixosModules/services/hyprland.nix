@@ -45,6 +45,7 @@
       wofi
       dunst
       eww
+      jq # my eww config requires jq
     ];
 
     services.xserver.libinput.enable = true;
