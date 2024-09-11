@@ -5,7 +5,7 @@
 }:
 
 pkgs.stdenv.mkDerivation {
-  pname = "Poiret_One";
+  name = "Poiret_One";
 
   meta = {
     description = "Poiret One font From Google freefonts, in css use the font name: Poiret One";
