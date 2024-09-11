@@ -7,7 +7,7 @@
 pkgs.stdenv.mkDerivation {
 
   name = "Poiret One Regular Font (From Google freefonts)";
-  src = ./.;
+  src = ../../assets/.;
 
   dontUnpack = true;
 

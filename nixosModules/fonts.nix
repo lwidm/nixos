@@ -8,6 +8,7 @@
 }:
 let
   Poiret_One = pkgs.callPackage ../packages/fonts/Poiret_One.nix { inherit pkgs; };
+  Phosphor = pkgs.callPackage ../packages/fonts/Phosphor.nix { inherit pkgs; };
 in
 {
 
@@ -26,6 +27,7 @@ in
         ];
       })
       Poiret_One
+      Phosphor
     ];
   };
 }
