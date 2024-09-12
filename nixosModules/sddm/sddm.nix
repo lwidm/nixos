@@ -1,28 +1,34 @@
 # sddm.nix
 
-{ pkgs, lib, config, ... }: {
-	
-	options = {
-		sddm.enable = lib.mkEnableOption "enables sddm with a theme";
-	};
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+{
 
-	config = lib.mkIf config.sddm.enable {
+  options = {
+    sddm.enable = lib.mkEnableOption "enables sddm with a theme";
+  };
 
-		qt-conf.enable = true;
+  config = lib.mkIf config.sddm.enable {
 
-		environment.systemPackages = with pkgs; [
-			libsForQt5.qt5.qtquickcontrols2
-			libsForQt5.qt5.qtgraphicaleffects
-		];
+    # depreciated as I use homemanager for this
+    # qt-conf.enable = true;
 
-		services.xserver = {
-			enable = true;
-			xkb.layout = "ch";
-			xkb.variant = "de";
-			displayManager.sddm.enable = true;
-			displayManager.sddm.wayland.enable = true;
-			displayManager.sddm.theme = "${import ./sddm-theme_sugar-dark.nix { inherit pkgs; }}";
-		};
-	};
+    environment.systemPackages = with pkgs; [
+      libsForQt5.qt5.qtquickcontrols2
+      libsForQt5.qt5.qtgraphicaleffects
+    ];
 
+    services.xserver = {
+      enable = true;
+      xkb.layout = "ch";
+      xkb.variant = "de";
+      displayManager.sddm.enable = true;
+      displayManager.sddm.wayland.enable = true;
+      displayManager.sddm.theme = "${import ./sddm-theme_sugar-dark.nix { inherit pkgs; }}";
+    };
+  };
 }

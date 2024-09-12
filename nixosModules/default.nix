@@ -1,3 +1,5 @@
+# $NIXCONF/nixosModules/default.nix
+
 { pkgs, lib, ... }:
 {
 

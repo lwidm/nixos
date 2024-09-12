@@ -113,6 +113,9 @@
 
       pavucontrol
       brightnessctl
+
+      cinnamon.nemo-with-extensions
+      dolphin
     ];
   };
 }

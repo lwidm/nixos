@@ -15,8 +15,9 @@
 
   config = lib.mkIf config.hyprland.enable {
 
-    gtk-conf.enable = true;
-    qt-conf.enable = true;
+    # depreciated as I use homemanager for this
+    # gtk-conf.enable = true;
+    # qt-conf.enable = true;
 
     programs.hyprland = {
       enable = true;

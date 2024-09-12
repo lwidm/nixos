@@ -21,6 +21,8 @@
 
   grub.enable = true;
   systemd-boot.enable = false;
+  gtk-conf.enable = true;
+  qt-conf.enable = true;
 
   fonts.enable = true;
   X11_i3_startx.enable = false;
@@ -74,6 +76,7 @@
       anki
       zoom-us
       discord
+      libreoffice-fresh
     ];
   };
 
@@ -85,6 +88,8 @@
     nix-prefetch-github
     neofetch
     wdisplays
+
+    home-manager
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
