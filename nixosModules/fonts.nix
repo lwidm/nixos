@@ -28,7 +28,6 @@ in
         fonts = [
           "JetBrainsMono"
           "Hack"
-          "Inter"
         ];
       })
       Poiret_One

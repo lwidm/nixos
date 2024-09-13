@@ -14,7 +14,7 @@ pkgs.stdenv.mkDerivation {
     homepage = "https://fonts.google.com/specimen/Inter";
   };
 
-  src = ../assets/Inter.tar.gz;
+  src = ../../assets/Inter.tar.gz;
 
   nativeBuildInputs = [
     pkgs.gnutar
@@ -27,6 +27,6 @@ pkgs.stdenv.mkDerivation {
   '';
 
   installPhase = ''
-    ${font-patcher}/bin/font-patcher $out/share/fonts/truetype/Inter.ttc
+    ${font-patcher}/bin/font-patcher $out/share/fonts/truetype/Inter.ttc -out $out/share/fonts/truetype/
   '';
 }
