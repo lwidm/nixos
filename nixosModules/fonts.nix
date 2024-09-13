@@ -17,9 +17,9 @@ in
     fonts.enable = lib.mkEnableOption "enables fonts.nix";
   };
 
-  environment.systemPackages = [ font-patcher ];
-
   config = lib.mkIf config.fonts.enable {
+
+    environment.systemPackages = [ font-patcher ];
 
     fonts.packages = with pkgs; [
       hack-font

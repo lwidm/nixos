@@ -14,7 +14,7 @@ pkgs.stdenv.mkDerivation {
 
   src = pkgs.fetchurl {
     url = "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FontPatcher.zip";
-    hash = pkgs.lib.fakeHash;
+    hash = "sha256-eCXAUHRXQ3+s7K1iFq3hob/9nyS59cWeXoSVjbsx8tY=";
   };
 
   nativeBuildInputs = [ pkgs.unzip ];
