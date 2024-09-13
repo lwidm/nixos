@@ -1,4 +1,5 @@
 # $NIXCONF/pkgs/font-patcher.nix
+
 {
   pkgs ? import <nixpkgs> { },
 }:
@@ -21,12 +22,13 @@ pkgs.stdenv.mkDerivation {
 
   buildInputs = [
     pkgs.fontforge
-    pkgs.python3
+    (pkgs.python3.withPackages (python-pkgs: [ python-pkgs.fontforge ]))
   ];
 
   unpackPhase = ''
-        mkdir -p $out
-    	${pkgs.unzip}/bin/unzip $src -d $out
+    mkdir -p $out/bin
+    ${pkgs.unzip}/bin/unzip $src -d $out/bin
+    chmod +x $out/bin/font-patcher
   '';
 
   installPhase = '''';
