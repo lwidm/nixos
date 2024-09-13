@@ -1,4 +1,4 @@
-# packages/fonts/Phosphor.nix
+# $NIXCONF/pkgs/fonts/Phosphor.nix
 
 {
   pkgs ? import <nixpkgs> { },
@@ -12,6 +12,8 @@ pkgs.stdenv.mkDerivation {
     description = "Phosphor icons font (font name is Phosphor), see homepage for how to use";
     homepage = "https://github.com/phosphor-icons/web/tree/master";
   };
+
+  nativeBuildInputs = [ pkgs.gnutar ];
 
   src = ../../assets/Phosphor.tar.gz;
 

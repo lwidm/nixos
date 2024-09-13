@@ -1,4 +1,4 @@
-# packages/fonts/Poiret_One.nix
+# $NIXCONF/pkgs/fonts/Poiret_One.nix
 
 {
   pkgs ? import <nixpkgs> { },
@@ -13,6 +13,8 @@ pkgs.stdenv.mkDerivation {
   };
 
   src = ../../assets/Poiret_One.tar.gz;
+
+  nativeBuildInputs = [ pkgs.gnutar ];
 
   unpackPhase = ''
     mkdir -p $out/share/fonts/truetype/

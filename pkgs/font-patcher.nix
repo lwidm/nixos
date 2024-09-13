@@ -1,0 +1,33 @@
+# $NIXCONF/pkgs/font-patcher.nix
+{
+  pkgs ? import <nixpkgs> { },
+}:
+
+pkgs.stdenv.mkDerivation {
+  pname = "nerd-fonts_font-patcher";
+  version = "v3.2.1";
+
+  meta = {
+    description = "Patch own fonts using 'font-patcher PATH_TO_FONT'";
+    homepage = "https://github.com/ryanoasis/nerd-fonts";
+  };
+
+  src = pkgs.fetchurl {
+    url = "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FontPatcher.zip";
+    hash = pkgs.lib.fakeHash;
+  };
+
+  nativeBuildInputs = [ pkgs.unzip ];
+
+  buildInputs = [
+    pkgs.fontforge
+    pkgs.python3
+  ];
+
+  unpackPhase = ''
+        mkdir -p $out
+    	${pkgs.unzip}/bin/unzip $src -d $out
+  '';
+
+  installPhase = '''';
+}
