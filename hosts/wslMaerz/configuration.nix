@@ -5,19 +5,26 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
     # include NixOS-WSL modules
     # <nixos-wsl/modules>
-      ./hardware-configuration.nix
+    ./hardware-configuration.nix
   ];
 
   environment.variables = {
     MYSYSTEM = "wslMaerz";
     WORKDIR = "/mnt/g/K_TECH/GGR-Datenbank/Berechnung\ Neu/02\ In\ Arbeit/python/2023_Lukas/";
   };
+
+  common_packages.enable = true;
 
   fonts.enable = true;
   X11_i3_startx.enable = false;
@@ -33,11 +40,7 @@
   wsl.enable = true;
   wsl.defaultUser = "nixos";
 
-  environment.systemPackages = with pkgs; [
-    nix-prefetch
-    nix-prefetch-git
-    neofetch
-  ];
+  environment.systemPackages = with pkgs; [ home-manager ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

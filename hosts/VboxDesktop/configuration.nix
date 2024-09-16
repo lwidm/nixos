@@ -1,19 +1,27 @@
 # ./hosts/default/configuration.nix
 
-{ config, stdenv, lib, pkgs, inputs, ... }:
+{
+  config,
+  stdenv,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
-
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   environment.variables = {
     MYSYSTEM = "VboxDesktop";
   };
 
   grub.enable = true;
+
+  common_packages.enable = true;
 
   fonts.enable = true;
   X11_i3_startx.enable = false;
@@ -23,7 +31,7 @@
   sddm.enable = true;
 
   # Networking
-  networking =  {
+  networking = {
     hostName = "lwidmVboxNixos"; # Define your hostname.
     networkmanager.enable = true;
     # wireless.enable = true; # Enables wireless support via wpa_supplicant.
@@ -35,11 +43,9 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-
   # Virtualbox
   virtualisation.virtualbox.guest.enable = true;
   # virtualisation.virtualbox.guest.x11 = true;
-
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lukas = {
@@ -47,23 +53,18 @@
     description = "lukas widmer";
     useDefaultShell = true;
     # WARNING: not sure whether it is smart to add the user to the input group
-    extraGroups = [ "wheel" "audio" "networkmanager" "input" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      polybar
-      firefox
-      gimp
-    ];
+    extraGroups = [
+      "wheel"
+      "audio"
+      "networkmanager"
+      "input"
+    ]; # Enable ‘sudo’ for the user.
+    packages = with pkgs; [ ];
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [    
-    nix-prefetch
-    nix-prefetch-git
-    nix-prefetch-github
-    neofetch
-  ];
-
+  environment.systemPackages = with pkgs; [ home-manager ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -106,6 +107,4 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
-

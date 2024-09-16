@@ -24,6 +24,8 @@
   gtk-conf.enable = true;
   qt-conf.enable = true;
 
+  common_packages.enable = true;
+
   fonts.enable = true;
   X11_i3_startx.enable = false;
   hyprland.enable = true;
@@ -67,28 +69,13 @@
       "networkmanager"
       "input"
     ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      polybar
-      firefox
-      thunderbird
-      gimp
-      obsidian
-      anki
-      zoom-us
-      discord
-      libreoffice-fresh
-    ];
+    packages = with pkgs; [ ];
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    nix-prefetch
-    nix-prefetch-git
-    nix-prefetch-github
-    neofetch
     wdisplays
-
     home-manager
   ];
 

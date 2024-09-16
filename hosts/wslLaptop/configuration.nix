@@ -16,6 +16,8 @@
   environment.variables = {
     MYSYSTEM = "wslLaptop";
   };
+  
+  common_packages.enable = true;
 
   fonts.enable = true;
   X11_i3_startx.enable = false;
@@ -32,9 +34,7 @@
   wsl.defaultUser = "nixos";
 
   environment.systemPackages = with pkgs; [
-    nix-prefetch
-    nix-prefetch-git
-    neofetch
+    home-manger;
   ];
 
   # This value determines the NixOS release from which the default

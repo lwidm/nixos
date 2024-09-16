@@ -11,6 +11,7 @@
     ./development.nix
     ./linuxDebug.nix
     ./ntfs.nix
+    ./common_packages.nix
     ./services/gtk-conf.nix
     ./services/qt-conf.nix
     ./services/X11_i3_startx.nix
