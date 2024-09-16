@@ -69,7 +69,7 @@
       "networkmanager"
       "input"
     ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [ ];
+    packages = with pkgs; [ mdadm ];
   };
 
   # List packages installed in system profile. To search, run:
