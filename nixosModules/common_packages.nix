@@ -23,8 +23,11 @@
         zoom-us
         discord
         libreoffice-fresh
+
         texliveFull
         zathura
+        texlab
+        ltex-ls
       ];
     };
 
