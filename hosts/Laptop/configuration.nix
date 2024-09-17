@@ -35,6 +35,7 @@
   bluetooth.enable = true;
   onedrive.enable = true;
   linuxDebug.enable = true;
+  wine-config.enable = true;
 
   wacom.enable = true;
 

@@ -37,6 +37,7 @@
   ntfs.enable = true;
   linuxDebug.enable = true;
   printing.enable = true;
+  wine-config.enable = true;
 
   wacom.enable = true;
 
