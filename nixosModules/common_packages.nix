@@ -23,6 +23,7 @@
         zoom-us
         discord
         libreoffice-fresh
+        xournalpp
 
         texliveFull
         zathura
