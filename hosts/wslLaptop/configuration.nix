@@ -5,7 +5,12 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -16,8 +21,8 @@
   environment.variables = {
     MYSYSTEM = "wslLaptop";
   };
-  
-  common_packages.enable = true;
+
+  common_packages.enable = false;
 
   fonts.enable = true;
   X11_i3_startx.enable = false;
@@ -33,9 +38,25 @@
   wsl.enable = true;
   wsl.defaultUser = "nixos";
 
-  environment.systemPackages = with pkgs; [
-    home-manger;
-  ];
+  users.users.lukas = {
+    isNormalUser = true;
+    description = "lukas widmer";
+    useDefaultShell = true;
+    # WARNING: not sure whether it is smart to add the user to the input group
+    extraGroups = [
+      "wheel"
+      "audio"
+      "networkmanager"
+      "input"
+    ]; # Enable ‘sudo’ for the user.
+    packages = with pkgs; [
+      texliveFull
+      zathura
+      texlab
+      ltex-ls
+    ];
+  };
+  environment.systemPackages = with pkgs; [ home-manager ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
