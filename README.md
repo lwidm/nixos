@@ -49,7 +49,7 @@ protonup
 ```
 
 ### dgpu
-to use deticated graphics (on Laptops with both integrated and deticated graphics) either start the system with the dgpu specialisation from the boot menu ore prepend the game executable with `nvidia-offload <executable>` (this can be done in the steam settings)
+to use dedicated graphics (on Laptops with both integrated and dedicated graphics) either start the system with the dgpu specialization from the boot menu ore prepend the game executable with `nvidia-offload <executable>` (this can be done in the steam settings)
 
 ## mounting ntfs drives
 first enable the ntfs.nix modules in `configuration.nix`
@@ -60,3 +60,12 @@ then you should be able to mount the drive by running
 ```zsh
 sudo mount -t ntfs-3g /dev/sdxx /mnt/driveName
 ```
+
+## Wine
+- for 64 bit systems, enable 32 bit architechture
+    sudo dpkg --add-architecture i386
+    (in my case I didn't do this as I don't have the dpkg command and I am too lazy to figure out how to get it)
+
+- Add `wine-config.nix` to the relevant host
+    `wine-config.enable = true;`
+- 
