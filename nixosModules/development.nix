@@ -68,7 +68,7 @@
 
       cargo
 
-      gfortran9
+      gfortran
       fortls
       fprettify
     ];
