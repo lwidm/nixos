@@ -55,8 +55,7 @@
     environment.localBinInPath = true;
 
     # Touchpad settings
-    services.xserver.libinput.enable = true;
-    services.xserver.libinput.touchpad.naturalScrolling = true;
+    services.libinput.touchpad = true;
 
     # Zsh
     programs.zsh.enable = true;
@@ -66,7 +65,6 @@
     services.printing.enable = true;
 
     # Enable sound
-    sound.enable = true;
     security.rtkit.enable = true;
     services.pipewire = {
       enable = true;
@@ -114,7 +112,7 @@
       pavucontrol
       brightnessctl
 
-      cinnamon.nemo-with-extensions
+      nemo-with-extensions
       dolphin
     ];
   };

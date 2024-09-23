@@ -1,5 +1,19 @@
 # lwdim's nixos configuration flake
 
+## Updating nixos
+1. Update the flake inputs:
+```zsh
+sudo nix flake update
+```
+2. Rebuild the NixOS configuration:
+```zsh
+sudo nixos-rebuild switch --flake .#
+```
+3. Reboot if necessary:
+```zsh
+sudo reboot
+```
+
 ## iso image
 
 configurations for the iso image are under /hosts/isoimage

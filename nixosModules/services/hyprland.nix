@@ -49,7 +49,7 @@
       jq # my eww config requires jq
     ];
 
-    services.xserver.libinput.enable = true;
+    services.libinput.enable = true;
 
     security.polkit.enable = true;
 
