@@ -6,7 +6,7 @@
   config,
   inputs,
   ...
-}:
+  }:
 {
 
   options = {
@@ -27,7 +27,6 @@
     programs.neovim = {
       enable = true;
       defaultEditor = true;
-      package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
       viAlias = true;
       vimAlias = true;
     };
@@ -66,6 +65,10 @@
       cargo
       zip
       unzip
+
+      gfortran9
+      fortls
+      fprettify
     ];
 
     # environment.variables = {
