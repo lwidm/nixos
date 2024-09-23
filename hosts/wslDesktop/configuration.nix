@@ -36,6 +36,7 @@
   systemd-boot.enable = false;
 
   wsl.enable = true;
+  wsl-config.enable = true;
   wsl.defaultUser = "nixos";
 
   users.users.lukas = {

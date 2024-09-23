@@ -6,7 +6,7 @@
   config,
   inputs,
   ...
-  }:
+}:
 {
 
   options = {
@@ -35,6 +35,8 @@
       # packages for i3
       tmux
       ripgrep
+      zip
+      unzip
 
       nodejs
       typescript
@@ -62,9 +64,9 @@
       cmake-language-server
       cmake-format
       gnumake
+      ninja
+
       cargo
-      zip
-      unzip
 
       gfortran9
       fortls

@@ -13,6 +13,7 @@
     ./ntfs.nix
     ./common_packages.nix
     ./wine-config.nix
+    ./wsl-config.nix
     ./services/gtk-conf.nix
     ./services/qt-conf.nix
     ./services/X11_i3_startx.nix

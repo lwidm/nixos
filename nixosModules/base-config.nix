@@ -55,7 +55,7 @@
     environment.localBinInPath = true;
 
     # Touchpad settings
-    services.libinput.touchpad = true;
+    services.libinput.enable = true;
 
     # Zsh
     programs.zsh.enable = true;

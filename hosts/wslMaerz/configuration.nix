@@ -38,6 +38,7 @@
   systemd-boot.enable = false;
 
   wsl.enable = true;
+  wsl-config.enable = true;
   wsl.defaultUser = "nixos";
 
   environment.systemPackages = with pkgs; [ home-manager ];
