@@ -114,6 +114,9 @@
 
       nemo-with-extensions
       dolphin
+
+      nil
+      nixpkgs-fmt
     ];
   };
 }
