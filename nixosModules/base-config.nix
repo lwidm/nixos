@@ -90,8 +90,6 @@
       ];
     };
 
-    programs.zoxide.enable = true;
-
     # essential packages
     environment.systemPackages = with pkgs; [
       neovim
