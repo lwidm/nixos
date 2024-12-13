@@ -33,7 +33,8 @@
   nvidia.enable = true;
   sddm.enable = true;
   bluetooth.enable = true;
-  onedrive.enable = true;
+  onedrive.enable = false;
+  rclone.enable = true;
   linuxDebug.enable = true;
   wine-config.enable = true;
 

@@ -33,7 +33,8 @@
   nvidia.enable = true;
   sddm.enable = true;
   bluetooth.enable = true;
-  onedrive.enable = true;
+  onedrive.enable = false;
+  rclone.enable = true;
   ntfs.enable = true;
   linuxDebug.enable = true;
   printing.enable = true;
