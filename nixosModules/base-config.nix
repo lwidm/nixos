@@ -87,6 +87,16 @@
           events = [ "key" ];
           command = "/run/current-system/sw/bin/brightnessctl set 5%-";
         }
+        {
+          keys = [ 115 ];
+          events = [ "key" ];
+          command = "amixer -q sset Master 1%+";
+        }
+        {
+          keys = [ 114 ];
+          events = [ "key" ];
+          command = "amixer -q sset Master 1%-";
+        }
       ];
     };
 
@@ -111,6 +121,7 @@
 
       pavucontrol
       brightnessctl
+      alsa-utils
 
       nemo-with-extensions
       dolphin
