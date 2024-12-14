@@ -71,7 +71,10 @@
       "networkmanager"
       "input"
     ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [ mdadm ];
+    packages = with pkgs; [
+      vscode
+      mdadm
+    ];
   };
 
   # List packages installed in system profile. To search, run:

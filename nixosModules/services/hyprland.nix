@@ -47,6 +47,8 @@
       dunst
       eww
       jq # my eww config requires jq
+
+      inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     ];
 
     services.libinput.enable = true;
