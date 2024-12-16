@@ -18,6 +18,9 @@
       gtk4
       gtk-engine-murrine
       sassc
+      nwg-look
+      lxappearance
+      pkgs.gnome3.gnome-tweaks
     ];
 
     # environment.systemPackages = with pkgs; [
