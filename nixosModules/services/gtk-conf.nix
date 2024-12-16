@@ -20,7 +20,7 @@
       sassc
       nwg-look
       lxappearance
-      pkgs.gnome3.gnome-tweaks
+      gnome-tweaks
     ];
 
     # environment.systemPackages = with pkgs; [
