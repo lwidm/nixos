@@ -1,4 +1,4 @@
-# development.nix
+# $NIXCONF/nixosModules/development.nix
 
 {
   pkgs,
