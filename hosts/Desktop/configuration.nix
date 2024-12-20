@@ -39,6 +39,7 @@
   linuxDebug.enable = true;
   printing.enable = true;
   wine-config.enable = true;
+  ETH.enable = true;
 
   wacom.enable = true;
 

@@ -25,6 +25,7 @@
     ./services/rclone.nix
     ./services/pulseaudio.nix
     ./services/printing.nix
+    ./services/external_drives.nix
     ./sddm/sddm.nix
 
     ./Laptop/thermald-tlp.nix

@@ -110,6 +110,9 @@
       ];
     };
 
+    # external drives
+    external_drives.enable = true;
+
     # essential packages
     environment.systemPackages = with pkgs; [
       neovim

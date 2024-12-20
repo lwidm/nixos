@@ -2,7 +2,7 @@
   pkgs ? import <nixpkgs> { },
 }:
 
-pkgs.mkDerivation rec {
+pkgs.stdenv.mkDerivation {
   pname = "STMCUFinder";
   version = "v6.1.0";
 
@@ -11,22 +11,41 @@ pkgs.mkDerivation rec {
     homepage = "https://www.st.com/en/development-tools/st-mcu-finder-pc.html";
   };
 
-  src = ../../assets/en.st-mcu-finderlin-v6-1-0.zip;
+  src = ../assets/en.st-mcu-finderlin-v6-1-0.zip;
 
   buildInputs = with pkgs; [
     unzip
-    sudo
+    jre_minimal
+    jdk
+    patchelf
   ];
-
+  nativeBuildInputs = with pkgs; [
+    unzip
+  ];
   buildPhase = ''
-    mkdir -p $out
+    mkdir -p $out 
     cd $out
     unzip $src -d $out
-    chmod 777 $out/SetupSTMCUFinder-6.1.0
+    chmod +x SetupSTMCUFinder-6.1.0 
   '';
 
   installPhase = ''
-    $out/SetupSTMCUFinder-6.1.0
+    # Create a wrapper script for the installer
+    echo "#!/bin/sh" > $out/run-installer.sh
+    echo "export PATH=${pkgs.jdk}/bin:\$PATH" >> $out/run-installer.sh
+    echo $out/SetupSTMCUFinder-6.1.0 >> $out/run-installer.sh
+    chmod +x run-installer.sh
+    $out/run-installer.sh
+    rm $out/run-installer
+  '';
+  postInstall = ''
+     # Ensure Java is available when running the installed program
+    mkdir -p $out/bin
+    cat << 'EOF' > $out/bin/run-stmcufinder
+    #!/bin/sh
+    export PATH=${pkgs.jdk}/bin:$PATH
+    EOF
+    chmod +x $out/bin/run-stmcufinder
   '';
 
 }
