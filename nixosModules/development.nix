@@ -37,6 +37,7 @@
       ripgrep
       zip
       unzip
+      lazygit
 
       nodejs
       typescript

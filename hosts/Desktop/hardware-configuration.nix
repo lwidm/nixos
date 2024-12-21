@@ -47,6 +47,9 @@
     options = [
       "uid=0"
       "gid=0"
+      "umask=000"
+      "fmask=000"
+      "dmask=000"
     ];
   };
 
