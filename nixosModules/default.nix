@@ -30,7 +30,7 @@
     ./Laptop/thermald-tlp.nix
     ./Laptop/DellXPS15.nix
 
-    ./wacom.nix
+    ./opentabletdriver.nix
 
     # gaming
     ./games/steam.nix

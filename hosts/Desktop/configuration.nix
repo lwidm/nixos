@@ -41,7 +41,7 @@
   wine-config.enable = true;
   ETH.enable = true;
 
-  wacom.enable = true;
+  opentabletdriver.enable = true;
 
   # gaming
   steam.enable = true;

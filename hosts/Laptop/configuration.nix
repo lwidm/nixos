@@ -38,7 +38,7 @@
   linuxDebug.enable = true;
   wine-config.enable = true;
 
-  wacom.enable = true;
+  opentabletdriver.enable = true;
 
   # gaming
   steam.enable = true;
