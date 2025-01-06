@@ -54,6 +54,9 @@
       ))
       pyright
       black
+      (matlab-language-server.overrideAttrs (old: {
+        version = "1.2.7";
+      }))
       nil
       nixpkgs-fmt
       nixfmt-rfc-style
