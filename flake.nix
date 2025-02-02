@@ -85,6 +85,17 @@
           ];
         };
 
+        HyprVDesktop = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./hosts/HyprVDesktop/configuration.nix
+            ./nixosModules
+            # inputs.home-manager.nixosModules.default
+          ];
+        };
+
         Desktop = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
