@@ -14,7 +14,7 @@
 
   config = lib.mkIf config.qt-conf.enable {
 
-    environment.systemPackages = with pkgs; [ qt5ct ];
+    environment.systemPackages = with pkgs; [ libsForQt5.qt5ct ];
 
     qt = {
       enable = true;

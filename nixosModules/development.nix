@@ -75,6 +75,7 @@
       gfortran
       fortls
       fprettify
+      lemminx
     ];
 
     # environment.variables = {

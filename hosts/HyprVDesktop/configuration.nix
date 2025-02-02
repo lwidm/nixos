@@ -21,23 +21,23 @@
 
   grub.enable = true;
   systemd-boot.enable = false;
-  gtk-conf.enable = false;
-  qt-conf.enable = false;
+  gtk-conf.enable = true;
+  qt-conf.enable = true;
 
-  common_packages.enable = false;
+  common_packages.enable = true;
 
-  fonts.enable = false;
+  fonts.enable = true;
   X11_i3_startx.enable = false;
-  hyprland.enable = false;
-  development.enable = false;
-  nvidia.enable = false;
-  sddm.enable = false;
-  bluetooth.enable = false;
+  hyprland.enable = true;
+  development.enable = true;
+  nvidia.enable = true;
+  sddm.enable = true;
+  bluetooth.enable = true;
   onedrive.enable = false;
-  rclone.enable = false;
-  ntfs.enable = false;
-  linuxDebug.enable = false;
-  printing.enable = false;
+  rclone.enable = true;
+  ntfs.enable = true;
+  linuxDebug.enable = true;
+  printing.enable = true;
   wine-config.enable = false;
   ETH.enable = false;
 
@@ -49,41 +49,53 @@
 
   # Enable UEFI and kernal moduules for virtualization
   boot = {
-    kernalModules = [
-      "vfio_pci"
-      "vfio"
-      "vfio_iommu_type1"
-      "kvmgt"
-    ];
-    blacklistedKernelModules = [
-      "nouveau"
-      "nvidia"
-      "amdgpu"
-    ];
-    kernalParams = [
-      "intel_iommu=on" # Intel CPUs
+    # kernelModules = [
+    #   "vfio_pci"
+    #   "vfio"
+    #   "vfio_iommu_type1"
+    #   "kvmgt"
+    # ];
+    # blacklistedKernelModules = [
+    #   "nouveau"
+    #   "nvidia"
+    #   "amdgpu"
+    # ];
+    kernelParams = [
+      # "intel_iommu=on" # Intel CPUs
+      "cgroup_enable=devices"
+      "mem_encrypt=on"
       "amd_iommu=on" # AMD CPUs
       "iommu=pt"
-      "vfio-pci.ids=10de:1f02,10de:10f9,10de:1ada,10de:1adb" # GPU and audio ids from: lspci -nnv | grep -i nvidia
+      # "vfio-pci.ids=10de:1f02,10de:10f9,10de:1ada,10de:1adb" # Nvidia: GPU, audio, usb and usb-c ids from: lspci -nnv | grep -i nvidia
     ];
-    initrd.kernelModules = [ "vfio_pci" ];
+    kernelModules = [
+      "kvm-amd"
+      "sev"
+    ];
+    # initrd.kernelModules = [ "vfio_pci" ];
+    # extraModprobeConfig = "options kvm-intel nested=1"; # Intel
+    extraModprobeConfig = "options kvm-amd nested=1"; # AMD
   };
 
   # Enablle QEMU/KVM and Libvirt
   virtualisation = {
-    libvertd = {
+    libvirtd = {
       enable = true;
       qemu = {
-        package = pkgs.qqemu_kvm;
+        package = pkgs.qemu_kvm;
         runAsRoot = true;
         swtpm.enable = true; # For Windows 11 Secure Boot
+        ovmf.enable = true;
+        ovmf.packages = [ (pkgs.OVMFFull.override { secureBoot = true; }).fd ];
       };
     };
-    spiceUSBRedirection = true;
+    # spiceUSBRedirection = true;
   };
 
+  security.tpm2.enable = true;
+
   # No display manager (boot to CLI)
-  services.xserver.enable = false;
+  # services.xserver.enable = false;
 
   # Required for GPU passthrough
   systemd.tmpfiles.rules = [
@@ -97,7 +109,7 @@
     # wireless.enable = true; # Enables wireless support via wpa_supplicant.
   };
   # Pick only one of the below networking options.
-  # networking.wireless.enable = true; 
+  # networking.wireless.enable = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -117,6 +129,7 @@
       # Hyperviser groups
       "libvirtd"
       "kvm"
+      "tss"
       "input"
     ];
     packages = with pkgs; [
@@ -134,7 +147,23 @@
     wget
     curl
     stow
-    nvim
+    neovim
+
+    qemu_kvm
+    qemu
+    libvirt
+    virt-viewer
+    virt-manager
+    swtpm
+    OVMF
+    OVMFFull
+    # qemu_img
+    guestfs-tools
+    libosinfo
+    # tuned
+    bridge-utils
+    virtio-win
+    win-spice
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

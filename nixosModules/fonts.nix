@@ -24,12 +24,8 @@ in
 
     fonts.packages = with pkgs; [
       hack-font
-      (nerdfonts.override {
-        fonts = [
-          "JetBrainsMono"
-          "Hack"
-        ];
-      })
+      nerd-fonts.hack
+      nerd-fonts.jetbrains-mono
       Poiret_One
       Phosphor
       Inter_Nerd_Font
